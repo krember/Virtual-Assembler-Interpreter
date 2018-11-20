@@ -1,6 +1,6 @@
-The system is: Darwin - 18.0.0 - x86_64
+The system is: CYGWIN - 2.11.1(0.329/5/3) - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
+Compiler: C:/cygwin64/bin/gcc.exe 
 Build flags: 
 Id flags:  
 
@@ -8,12 +8,12 @@ The output was:
 0
 
 
-Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
 
-The C compiler identification is AppleClang, found in "/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdC/a.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
+Compiler: C:/cygwin64/bin/g++.exe 
 Build flags: 
 Id flags:  
 
@@ -21,104 +21,165 @@ The output was:
 0
 
 
-Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
 
-The CXX compiler identification is AppleClang, found in "/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/3.12.1/CompilerIdCXX/a.exe"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_dd807/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_dd807.dir/build.make CMakeFiles/cmTC_dd807.dir/build
-Building C object CMakeFiles/cmTC_dd807.dir/testCCompiler.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -o CMakeFiles/cmTC_dd807.dir/testCCompiler.c.o   -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_dd807
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd807.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_dd807.dir/testCCompiler.c.o  -o cmTC_dd807 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_968a0/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_968a0.dir/build.make CMakeFiles/cmTC_968a0.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_968a0.dir/testCCompiler.c.o
+C:/cygwin64/bin/gcc.exe    -o CMakeFiles/cmTC_968a0.dir/testCCompiler.c.o   -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_968a0.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_968a0.dir/link.txt --verbose=1
+C:/cygwin64/bin/gcc.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_968a0.dir/testCCompiler.c.o  -o cmTC_968a0.exe -Wl,--out-implib,libcmTC_968a0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e4c14/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e4c14.dir/build.make CMakeFiles/cmTC_e4c14.dir/build
-Building C object CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -o CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_e4c14
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4c14.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o  -o cmTC_e4c14 
-Apple LLVM version 10.0.0 (clang-1000.11.45.2)
-Target: x86_64-apple-darwin18.0.0
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_b5ec6/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_b5ec6.dir/build.make CMakeFiles/cmTC_b5ec6.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o
+C:/cygwin64/bin/gcc.exe    -o CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o   -c /cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/share/cmake-3.12.1/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_b5ec6.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_b5ec6.dir/link.txt --verbose=1
+C:/cygwin64/bin/gcc.exe    -Wl,--enable-auto-import -v CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o  -o cmTC_b5ec6.exe -Wl,--out-implib,libcmTC_b5ec6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Using built-in specs.
+COLLECT_GCC=C:/cygwin64/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe
+Target: x86_64-pc-cygwin
+Configured with: /cygdrive/i/szsz/tmpp/gcc/gcc-7.3.0-3.x86_64/src/gcc-7.3.0/configure --srcdir=/cygdrive/i/szsz/tmpp/gcc/gcc-7.3.0-3.x86_64/src/gcc-7.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-graphite --enable-threads=posix --enable-libatomic --enable-libcilkrts --enable-libgomp --enable-libitm --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts
 Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -o cmTC_e4c14 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a
-@(#)PROGRAM:ld  PROJECT:ld64-409.12
-BUILD 02:04:28 Aug 14 2018
-configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em arm64e arm64_32
-Library search paths:
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib
-Framework search paths:
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/
+gcc version 7.3.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b5ec6.exe' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/cyglto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=/tmp/ccdKSZkK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lcygwin -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=cyg --tsaware -o cmTC_b5ec6.exe /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/crt0.o /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0 -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../.. --enable-auto-import CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o --out-implib libcmTC_b5ec6.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b5ec6.exe' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp]
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e4c14/fast"]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e4c14.dir/build.make CMakeFiles/cmTC_e4c14.dir/build]
-  ignore line: [Building C object CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -o CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o   -c /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_e4c14]
-  ignore line: [/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4c14.dir/link.txt --verbose=1]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o  -o cmTC_e4c14 ]
-  ignore line: [Apple LLVM version 10.0.0 (clang-1000.11.45.2)]
-  ignore line: [Target: x86_64-apple-darwin18.0.0]
+  ignore line: [Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_b5ec6/fast"]
+  ignore line: [C:/cygwin64/bin/make -f CMakeFiles/cmTC_b5ec6.dir/build.make CMakeFiles/cmTC_b5ec6.dir/build]
+  ignore line: [make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o]
+  ignore line: [C:/cygwin64/bin/gcc.exe    -o CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o   -c /cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/share/cmake-3.12.1/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_b5ec6.exe]
+  ignore line: [/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_b5ec6.dir/link.txt --verbose=1]
+  ignore line: [C:/cygwin64/bin/gcc.exe    -Wl,--enable-auto-import -v CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o  -o cmTC_b5ec6.exe -Wl,--out-implib,libcmTC_b5ec6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:/cygwin64/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe]
+  ignore line: [Target: x86_64-pc-cygwin]
+  ignore line: [Configured with: /cygdrive/i/szsz/tmpp/gcc/gcc-7.3.0-3.x86_64/src/gcc-7.3.0/configure --srcdir=/cygdrive/i/szsz/tmpp/gcc/gcc-7.3.0-3.x86_64/src/gcc-7.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-graphite --enable-threads=posix --enable-libatomic --enable-libcilkrts --enable-libgomp --enable-libitm --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts]
   ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -o cmTC_e4c14 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
-    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
-    arg [-demangle] ==> ignore
-    arg [-lto_library] ==> ignore, skip following value
-    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib] ==> skip value of -lto_library
-    arg [-dynamic] ==> ignore
-    arg [-arch] ==> ignore
-    arg [x86_64] ==> ignore
-    arg [-macosx_version_min] ==> ignore
-    arg [10.14.0] ==> ignore
-    arg [-syslibroot] ==> ignore
-    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk] ==> ignore
+  ignore line: [gcc version 7.3.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b5ec6.exe' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/cyglto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=/tmp/ccdKSZkK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lcygwin -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=cyg --tsaware -o cmTC_b5ec6.exe /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/crt0.o /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0 -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../.. --enable-auto-import CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o --out-implib libcmTC_b5ec6.dll.a --major-image-version 0 --minor-image-version 0 -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtend.o]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/collect2.exe] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/cyglto_plugin.dll] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccdKSZkK.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lcygwin] ==> ignore
+    arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+    arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [-m] ==> ignore
+    arg [i386pep] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_Znwm] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_Znam] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdlPv] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdaPv] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZnwmRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZnamRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdlPvRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdaPvRKSt9nothrow_t] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [--dll-search-prefix=cyg] ==> ignore
+    arg [--tsaware] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_e4c14] ==> ignore
-    arg [-search_paths_first] ==> ignore
-    arg [-headerpad_max_install_names] ==> ignore
-    arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_e4c14.dir/CMakeCCompilerABI.c.o] ==> ignore
-    arg [-lSystem] ==> lib [System]
-    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
-  Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib]
-  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/]
-  remove lib [System]
-  remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
-  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib]
-  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks]
-  implicit libs: []
-  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib]
-  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks]
+    arg [cmTC_b5ec6.exe] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/crt0.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../..]
+    arg [--enable-auto-import] ==> ignore
+    arg [CMakeFiles/cmTC_b5ec6.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [--out-implib] ==> ignore
+    arg [libcmTC_b5ec6.dll.a] ==> ignore
+    arg [--major-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [--minor-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lcygwin] ==> lib [cygwin]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/default-manifest.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtend.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0] ==> [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib] ==> [/usr/x86_64-pc-cygwin/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib] ==> [/usr/x86_64-pc-cygwin/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../..] ==> [/usr/lib]
+  implicit libs: [gcc_s;gcc;cygwin;advapi32;shell32;user32;kernel32;gcc_s;gcc]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0;/usr/x86_64-pc-cygwin/lib;/usr/lib;/lib]
+  implicit fwks: []
 
 
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_09e8b/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_09e8b.dir/build.make CMakeFiles/cmTC_09e8b.dir/build
-Building C object CMakeFiles/cmTC_09e8b.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -std=c11 -o CMakeFiles/cmTC_09e8b.dir/feature_tests.c.o   -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_09e8b
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_09e8b.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_09e8b.dir/feature_tests.c.o  -o cmTC_09e8b 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_d31fc/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_d31fc.dir/build.make CMakeFiles/cmTC_d31fc.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d31fc.dir/feature_tests.c.o
+C:/cygwin64/bin/gcc.exe   -std=c11 -o CMakeFiles/cmTC_d31fc.dir/feature_tests.c.o   -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d31fc.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_d31fc.dir/link.txt --verbose=1
+C:/cygwin64/bin/gcc.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_d31fc.dir/feature_tests.c.o  -o cmTC_d31fc.exe -Wl,--out-implib,libcmTC_d31fc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -128,15 +189,17 @@ Linking C executable cmTC_09e8b
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c7102/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_c7102.dir/build.make CMakeFiles/cmTC_c7102.dir/build
-Building C object CMakeFiles/cmTC_c7102.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -std=c99 -o CMakeFiles/cmTC_c7102.dir/feature_tests.c.o   -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_c7102
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7102.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_c7102.dir/feature_tests.c.o  -o cmTC_c7102 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_eb190/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_eb190.dir/build.make CMakeFiles/cmTC_eb190.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eb190.dir/feature_tests.c.o
+C:/cygwin64/bin/gcc.exe   -std=c99 -o CMakeFiles/cmTC_eb190.dir/feature_tests.c.o   -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_eb190.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_eb190.dir/link.txt --verbose=1
+C:/cygwin64/bin/gcc.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_eb190.dir/feature_tests.c.o  -o cmTC_eb190.exe -Wl,--out-implib,libcmTC_eb190.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -146,15 +209,17 @@ Linking C executable cmTC_c7102
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_246e5/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_246e5.dir/build.make CMakeFiles/cmTC_246e5.dir/build
-Building C object CMakeFiles/cmTC_246e5.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -std=c90 -o CMakeFiles/cmTC_246e5.dir/feature_tests.c.o   -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_246e5
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_246e5.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_246e5.dir/feature_tests.c.o  -o cmTC_246e5 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_5dada/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_5dada.dir/build.make CMakeFiles/cmTC_5dada.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5dada.dir/feature_tests.c.o
+C:/cygwin64/bin/gcc.exe   -std=c90 -o CMakeFiles/cmTC_5dada.dir/feature_tests.c.o   -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_5dada.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_5dada.dir/link.txt --verbose=1
+C:/cygwin64/bin/gcc.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_5dada.dir/feature_tests.c.o  -o cmTC_5dada.exe -Wl,--out-implib,libcmTC_5dada.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -162,100 +227,161 @@ Linking C executable cmTC_246e5
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fbe5d/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_fbe5d.dir/build.make CMakeFiles/cmTC_fbe5d.dir/build
-Building CXX object CMakeFiles/cmTC_fbe5d.dir/testCXXCompiler.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -o CMakeFiles/cmTC_fbe5d.dir/testCXXCompiler.cxx.o -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_fbe5d
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbe5d.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_fbe5d.dir/testCXXCompiler.cxx.o  -o cmTC_fbe5d 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_0ce78/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_0ce78.dir/build.make CMakeFiles/cmTC_0ce78.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0ce78.dir/testCXXCompiler.cxx.o
+C:/cygwin64/bin/g++.exe     -o CMakeFiles/cmTC_0ce78.dir/testCXXCompiler.cxx.o -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_0ce78.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_0ce78.dir/link.txt --verbose=1
+C:/cygwin64/bin/g++.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_0ce78.dir/testCXXCompiler.cxx.o  -o cmTC_0ce78.exe -Wl,--out-implib,libcmTC_0ce78.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_064e4/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_064e4.dir/build.make CMakeFiles/cmTC_064e4.dir/build
-Building CXX object CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -o CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_064e4
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_064e4.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_064e4 
-Apple LLVM version 10.0.0 (clang-1000.11.45.2)
-Target: x86_64-apple-darwin18.0.0
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_f8b8c/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_f8b8c.dir/build.make CMakeFiles/cmTC_f8b8c.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o
+C:/cygwin64/bin/g++.exe     -o CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o -c /cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/share/cmake-3.12.1/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_f8b8c.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_f8b8c.dir/link.txt --verbose=1
+C:/cygwin64/bin/g++.exe    -Wl,--enable-auto-import -v CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f8b8c.exe -Wl,--out-implib,libcmTC_f8b8c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+Using built-in specs.
+COLLECT_GCC=C:/cygwin64/bin/g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe
+Target: x86_64-pc-cygwin
+Configured with: /cygdrive/i/szsz/tmpp/gcc/gcc-7.3.0-3.x86_64/src/gcc-7.3.0/configure --srcdir=/cygdrive/i/szsz/tmpp/gcc/gcc-7.3.0-3.x86_64/src/gcc-7.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-graphite --enable-threads=posix --enable-libatomic --enable-libcilkrts --enable-libgomp --enable-libitm --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts
 Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -o cmTC_064e4 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a
-@(#)PROGRAM:ld  PROJECT:ld64-409.12
-BUILD 02:04:28 Aug 14 2018
-configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em arm64e arm64_32
-Library search paths:
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib
-Framework search paths:
-	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/
+gcc version 7.3.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/bin/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f8b8c.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/cyglto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=/tmp/ccP9Jy1y.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lcygwin -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=cyg --tsaware -o cmTC_f8b8c.exe /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/crt0.o /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0 -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../.. --enable-auto-import CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o --out-implib libcmTC_f8b8c.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f8b8c.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp]
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_064e4/fast"]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_064e4.dir/build.make CMakeFiles/cmTC_064e4.dir/build]
-  ignore line: [Building CXX object CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -o CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CLion.app/Contents/bin/cmake/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_064e4]
-  ignore line: [/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_064e4.dir/link.txt --verbose=1]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_064e4 ]
-  ignore line: [Apple LLVM version 10.0.0 (clang-1000.11.45.2)]
-  ignore line: [Target: x86_64-apple-darwin18.0.0]
+  ignore line: [Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_f8b8c/fast"]
+  ignore line: [C:/cygwin64/bin/make -f CMakeFiles/cmTC_f8b8c.dir/build.make CMakeFiles/cmTC_f8b8c.dir/build]
+  ignore line: [make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [C:/cygwin64/bin/g++.exe     -o CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o -c /cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/share/cmake-3.12.1/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_f8b8c.exe]
+  ignore line: [/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_f8b8c.dir/link.txt --verbose=1]
+  ignore line: [C:/cygwin64/bin/g++.exe    -Wl,--enable-auto-import -v CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f8b8c.exe -Wl,--out-implib,libcmTC_f8b8c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:/cygwin64/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe]
+  ignore line: [Target: x86_64-pc-cygwin]
+  ignore line: [Configured with: /cygdrive/i/szsz/tmpp/gcc/gcc-7.3.0-3.x86_64/src/gcc-7.3.0/configure --srcdir=/cygdrive/i/szsz/tmpp/gcc/gcc-7.3.0-3.x86_64/src/gcc-7.3.0 --prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 --with-tune=generic --enable-languages=ada,c,c++,fortran,lto,objc,obj-c++ --enable-graphite --enable-threads=posix --enable-libatomic --enable-libcilkrts --enable-libgomp --enable-libitm --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as --with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts]
   ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -o cmTC_064e4 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
-    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
-    arg [-demangle] ==> ignore
-    arg [-lto_library] ==> ignore, skip following value
-    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib] ==> skip value of -lto_library
-    arg [-dynamic] ==> ignore
-    arg [-arch] ==> ignore
-    arg [x86_64] ==> ignore
-    arg [-macosx_version_min] ==> ignore
-    arg [10.14.0] ==> ignore
-    arg [-syslibroot] ==> ignore
-    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk] ==> ignore
+  ignore line: [gcc version 7.3.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/:/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f8b8c.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/collect2.exe -plugin /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/cyglto_plugin.dll -plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=/tmp/ccP9Jy1y.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lcygwin -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id -m i386pep --wrap _Znwm --wrap _Znam --wrap _ZdlPv --wrap _ZdaPv --wrap _ZnwmRKSt9nothrow_t --wrap _ZnamRKSt9nothrow_t --wrap _ZdlPvRKSt9nothrow_t --wrap _ZdaPvRKSt9nothrow_t -Bdynamic --dll-search-prefix=cyg --tsaware -o cmTC_f8b8c.exe /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/crt0.o /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtbegin.o -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0 -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib -L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../.. --enable-auto-import CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o --out-implib libcmTC_f8b8c.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lgcc_s -lgcc -lcygwin -ladvapi32 -lshell32 -luser32 -lkernel32 -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/default-manifest.o /usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtend.o]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/collect2.exe] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/cyglto_plugin.dll] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccP9Jy1y.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lcygwin] ==> ignore
+    arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+    arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [-m] ==> ignore
+    arg [i386pep] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_Znwm] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_Znam] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdlPv] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdaPv] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZnwmRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZnamRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdlPvRKSt9nothrow_t] ==> ignore
+    arg [--wrap] ==> ignore
+    arg [_ZdaPvRKSt9nothrow_t] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [--dll-search-prefix=cyg] ==> ignore
+    arg [--tsaware] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_064e4] ==> ignore
-    arg [-search_paths_first] ==> ignore
-    arg [-headerpad_max_install_names] ==> ignore
-    arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_064e4.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-    arg [-lc++] ==> lib [c++]
-    arg [-lSystem] ==> lib [System]
-    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
-  Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib]
-  Framework search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/]
-  remove lib [System]
-  remove lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/lib/darwin/libclang_rt.osx.a]
-  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib]
-  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks]
-  implicit libs: [c++]
-  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib]
-  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks]
+    arg [cmTC_f8b8c.exe] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/crt0.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib]
+    arg [-L/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../..]
+    arg [--enable-auto-import] ==> ignore
+    arg [CMakeFiles/cmTC_f8b8c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [--out-implib] ==> ignore
+    arg [libcmTC_f8b8c.dll.a] ==> ignore
+    arg [--major-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [--minor-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lcygwin] ==> lib [cygwin]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib/default-manifest.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/crtend.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0] ==> [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib/../lib] ==> [/usr/x86_64-pc-cygwin/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../../../x86_64-pc-cygwin/lib] ==> [/usr/x86_64-pc-cygwin/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;gcc_s;gcc;cygwin;advapi32;shell32;user32;kernel32;gcc_s;gcc]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-cygwin/7.3.0;/usr/x86_64-pc-cygwin/lib;/usr/lib;/lib]
+  implicit fwks: []
 
 
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9c1e8/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9c1e8.dir/build.make CMakeFiles/cmTC_9c1e8.dir/build
-Building CXX object CMakeFiles/cmTC_9c1e8.dir/feature_tests.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -std=c++1z -o CMakeFiles/cmTC_9c1e8.dir/feature_tests.cxx.o -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_9c1e8
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c1e8.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_9c1e8.dir/feature_tests.cxx.o  -o cmTC_9c1e8 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_1ab15/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_1ab15.dir/build.make CMakeFiles/cmTC_1ab15.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1ab15.dir/feature_tests.cxx.o
+C:/cygwin64/bin/g++.exe    -std=c++1z -o CMakeFiles/cmTC_1ab15.dir/feature_tests.cxx.o -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_1ab15.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_1ab15.dir/link.txt --verbose=1
+C:/cygwin64/bin/g++.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_1ab15.dir/feature_tests.cxx.o  -o cmTC_1ab15.exe -Wl,--out-implib,libcmTC_1ab15.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -318,15 +444,17 @@ Linking CXX executable cmTC_9c1e8
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_08536/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_08536.dir/build.make CMakeFiles/cmTC_08536.dir/build
-Building CXX object CMakeFiles/cmTC_08536.dir/feature_tests.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -std=c++14 -o CMakeFiles/cmTC_08536.dir/feature_tests.cxx.o -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_08536
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_08536.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_08536.dir/feature_tests.cxx.o  -o cmTC_08536 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_5aaf0/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_5aaf0.dir/build.make CMakeFiles/cmTC_5aaf0.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5aaf0.dir/feature_tests.cxx.o
+C:/cygwin64/bin/g++.exe    -std=c++14 -o CMakeFiles/cmTC_5aaf0.dir/feature_tests.cxx.o -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_5aaf0.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_5aaf0.dir/link.txt --verbose=1
+C:/cygwin64/bin/g++.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_5aaf0.dir/feature_tests.cxx.o  -o cmTC_5aaf0.exe -Wl,--out-implib,libcmTC_5aaf0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -389,15 +517,17 @@ Linking CXX executable cmTC_08536
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_07fa9/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_07fa9.dir/build.make CMakeFiles/cmTC_07fa9.dir/build
-Building CXX object CMakeFiles/cmTC_07fa9.dir/feature_tests.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -std=c++11 -o CMakeFiles/cmTC_07fa9.dir/feature_tests.cxx.o -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_07fa9
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07fa9.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_07fa9.dir/feature_tests.cxx.o  -o cmTC_07fa9 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_8b959/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_8b959.dir/build.make CMakeFiles/cmTC_8b959.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8b959.dir/feature_tests.cxx.o
+C:/cygwin64/bin/g++.exe    -std=c++11 -o CMakeFiles/cmTC_8b959.dir/feature_tests.cxx.o -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_8b959.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_8b959.dir/link.txt --verbose=1
+C:/cygwin64/bin/g++.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_8b959.dir/feature_tests.cxx.o  -o cmTC_8b959.exe -Wl,--out-implib,libcmTC_8b959.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -460,15 +590,17 @@ Linking CXX executable cmTC_07fa9
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_94596/fast"
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_94596.dir/build.make CMakeFiles/cmTC_94596.dir/build
-Building CXX object CMakeFiles/cmTC_94596.dir/feature_tests.cxx.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk   -std=c++98 -o CMakeFiles/cmTC_94596.dir/feature_tests.cxx.o -c /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_94596
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94596.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_94596.dir/feature_tests.cxx.o  -o cmTC_94596 
+Run Build Command:"C:/cygwin64/bin/make.exe" "cmTC_d687e/fast"
+C:/cygwin64/bin/make -f CMakeFiles/cmTC_d687e.dir/build.make CMakeFiles/cmTC_d687e.dir/build
+make[1]: Entering directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d687e.dir/feature_tests.cxx.o
+C:/cygwin64/bin/g++.exe    -std=c++98 -o CMakeFiles/cmTC_d687e.dir/feature_tests.cxx.o -c /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d687e.exe
+/cygdrive/c/Users/mmamyan/.CLion2018.2/system/cygwin_cmake/bin/cmake.exe -E cmake_link_script CMakeFiles/cmTC_d687e.dir/link.txt --verbose=1
+C:/cygwin64/bin/g++.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_d687e.dir/feature_tests.cxx.o  -o cmTC_d687e.exe -Wl,--out-implib,libcmTC_d687e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Leaving directory '/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

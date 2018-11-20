@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine
+C:\Users\mmamyan\.CLion2018.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/cygwin64/bin/make.exe -DCMAKE_C_COMPILER=C:/cygwin64/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/cygwin64/bin/g++.exe -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug
+-- Build files have been written to: /cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug
