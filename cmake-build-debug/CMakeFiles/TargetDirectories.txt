@@ -1,3 +1,0 @@
-/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/Compiler_Tigran.dir
-/cygdrive/c/Users/mmamyan/CLionProjects/Compiler_Tigran/cmake-build-debug/CMakeFiles/edit_cache.dir
