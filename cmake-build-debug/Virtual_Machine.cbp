@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Virtual_Machine"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Virtual_Machine">
+				<Option output="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Virtual_Machine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 Virtual_Machine"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Virtual_Machine/fast">
+				<Option output="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Virtual_Machine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 Virtual_Machine/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/BinaryUtils.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Console.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Cpu/CPU.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Cpu/CPUConstants.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Cpu/CpuState.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Cpu/Functors/InstructionFunctor.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Cpu/Functors/SubFunctor.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Cpu/Functors/SumFunctor.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Exceptions/Exception.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Exceptions/ExecutionException.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Exceptions/IOException.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/FileLoader.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Instruction.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/LanguageConstants.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/Memory.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/NorthBridge.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/StructuredFile.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Headers/VirtualMachine.h">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/BinaryUtils.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Console.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Cpu/CPU.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Cpu/CpuState.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Cpu/Functors/SubFunctor.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Cpu/Functors/SumFunctor.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Exceptions/Exception.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Exceptions/ExecutionException.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Exceptions/IOException.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/FileLoader.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Instruction.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/Memory.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/NorthBridge.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/StructuredFile.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/Sources/VirtualMachine.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/main.cpp">
+			<Option target="Virtual_Machine"/>
+		</Unit>
+		<Unit filename="/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

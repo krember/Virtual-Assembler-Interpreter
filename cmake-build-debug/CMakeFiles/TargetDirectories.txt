@@ -1,0 +1,3 @@
+/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nhovhannisya/Desktop/Classes/Interpreter_coursework/Virtual_Machine/cmake-build-debug/CMakeFiles/Virtual_Machine.dir
