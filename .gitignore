@@ -44,6 +44,10 @@
 /cmake-build-debug/CMakeFiles/*
 /cmake-build-release/CMakeFiles/*
 
+/cmake-build-debug/Virtual_Machine
+/cmake-build-debug/Virtual_Machine.cbp
+/cmake-build-release/Virtual_Machine
+/cmake-build-release/Virtual_Machine.cbp
 
 .idea
 *.swp
