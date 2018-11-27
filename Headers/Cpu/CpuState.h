@@ -11,26 +11,27 @@ namespace cpu {
         uint64_t ir;
         std::vector <uint8_t> generalPurposeRegisters; // R_something
         std::vector <uint32_t> addressRegisters; // A_something
+        uint16_t fla
 
         CpuState(uint32_t ip, uint64_t ir,
                  std::vector <uint8_t> generalPurposeRegisters, std::vector <uint32_t> addressRegisters);
 
-        uint8_t getByte(uint32_t address);
+        template <typename valueType>
+        valueType getRegister(uint32_t address);
 
-        uint16_t getWord(uint32_t address);
-
-        uint32_t getDWord(uint32_t address);
-
-        uint64_t getQWord(uint32_t address);
-
-        void writeByteToRegisters(uint8_t address, uint8_t data);
-
-        void writeWordToRegisters(uint16_t address, uint16_t data);
-
-        void writeDWordToRegisters(uint32_t address, uint32_t data);
-
-        void writeQWordToRegisters(uint64_t address, uint64_t data);
+        template <typename valueType>
+        void writeToRegisters(uint8_t address, valueType data);
     };
+}
+
+template<typename valueType>
+valueType cpu::CpuState::getRegister(uint32_t address) {
+    return *reinterpret_cast<valueType *>(generalPurposeRegisters.data() + address);
+}
+
+template<typename valueType>
+void cpu::CpuState::writeToRegisters(uint8_t address, valueType data) {
+    *reinterpret_cast<valueType *>(generalPurposeRegisters.data() + address) = data;
 }
 
 #endif //VIRTUAL_MACHINE_CPUSTATE_H

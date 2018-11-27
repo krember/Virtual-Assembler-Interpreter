@@ -2,7 +2,7 @@
 #include <Exceptions/ExecutionException.h>
 #include "Cpu/Functors/SubFunctor.h"
 
-cpu::SubFunctor::SubFunctor(cpu::CPU *_cpu) : cpu(_cpu) {}
+cpu::SubFunctor::SubFunctor(cpu::CpuState *_cpuState) : cpuState(_cpuState) {}
 
 void cpu::SubFunctor::operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder, uint8_t register1,
                                  uint8_t register2, uint32_t literal) {
@@ -22,20 +22,16 @@ void cpu::SubFunctor::operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_
 void cpu::SubFunctor::sub(uint8_t dataSize, uint8_t register1, uint8_t register2) {
     switch (dataSize) {
         case DataSize::B:
-            cpu->cpuState.writeByteToRegisters(register1,
-                                               cpu->cpuState.getByte(register1) + cpu->cpuState.getByte(register2));
+            executeSub<uint8_t>(register1, register2);
             break;
         case DataSize::W:
-            cpu->cpuState.writeWordToRegisters(register1,
-                                               cpu->cpuState.getWord(register1) + cpu->cpuState.getWord(register2));
+            executeSub<uint16_t>(register1, register2);
             break;
         case DataSize::DW:
-            cpu->cpuState.writeDWordToRegisters(register1,
-                                                cpu->cpuState.getDWord(register1) + cpu->cpuState.getDWord(register2));
+            executeSub<uint32_t>(register1, register2);
             break;
         case DataSize::QW:
-            cpu->cpuState.writeQWordToRegisters(register1,
-                                                cpu->cpuState.getQWord(register1) + cpu->cpuState.getQWord(register2));
+            executeSub<uint64_t>(register1, register2);
             break;
         default:
             throw ExecutionException("Unrecognized data size found - " + dataSize);

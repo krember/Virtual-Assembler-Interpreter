@@ -8,19 +8,35 @@
 #include <cstdint>
 #include "Cpu/CPU.h"
 
-
 namespace cpu {
     class SumFunctor : public InstructionFunctor {
     private:
-        cpu::CPU* cpu;
+        cpu::CpuState *cpuState;
     public:
-        SumFunctor(cpu::CPU* _cpu);
+        SumFunctor(cpu::CpuState *state);
 
-        void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                        uint8_t register1, uint8_t register2, uint32_t literal);
+        virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
+                                uint8_t register1, uint8_t register2, uint32_t literal);
+
         void sum(uint8_t dataSize, uint8_t register1, uint8_t register2);
+
+        template<typename T>
+        void executeSum(uint8_t register1, uint8_t register2);
     };
 }
+
+template<typename T>
+void cpu::SumFunctor::executeSum(uint8_t register1, uint8_t register2) {
+    uint16_t flags;
+    T val = cpuState->getRegister<T>(register1) + cpuState->getRegister<T>(register2);
+    __asm {
+        pushf
+        pop eax
+        mov flags, eax
+    }
+    cpuState->writeToRegisters(register1, val);
+}
+
 
 #endif //VIRTUAL_MACHINE_SUMFUNCTOR_H
 

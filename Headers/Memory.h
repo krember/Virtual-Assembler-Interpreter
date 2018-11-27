@@ -11,12 +11,21 @@ class Memory {
 private:
     std::vector<uint8_t> data;
 public:
-    void loadFile(StructuredFile& file); // TODO: use Loader
-    uint8_t getByte(uint32_t address);
-    uint16_t getWord(uint32_t address);
-    uint32_t getDWord(uint32_t address);
-    uint64_t getQWord(uint32_t address); // TODO: single interface
+    template <typename valueType>
+    valueType read(uint32_t address);
+
+    template <typename valueType>
+    void write(uint8_t address, valueType data);
 };
 
+template<typename valueType>
+uint8_t Memory::read(uint32_t address) {
+    return *reinterpret_cast<valueType *>(data.data() + address);
+}
+
+template<typename valueType>
+void Memory::write(uint8_t address, valueType data) {
+    *reinterpret_cast<valueType *>(data.data() + address) = data;
+}
 
 #endif //VIRTUAL_MACHINE_MEMORY_H
