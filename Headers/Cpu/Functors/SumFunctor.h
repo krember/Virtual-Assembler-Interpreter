@@ -6,6 +6,7 @@
 #define VIRTUAL_MACHINE_SUMFUNCTOR_H
 
 #include <cstdint>
+#include <iostream>
 #include "Cpu/CPU.h"
 
 namespace cpu {
@@ -27,11 +28,13 @@ namespace cpu {
 
 template<typename T>
 void cpu::SumFunctor::executeSum(uint8_t register1, uint8_t register2) {
-    uint64_t register flag asm("rax") = 0;
+    register uint64_t flag asm("rax") = 0;
+    std::cout<<flag<<std::endl;
     T val = cpuState->getRegister<T>(register1) + cpuState->getRegister<T>(register2);
-    __asm ( "pushf    \n\t"
-            "pop %rax \n\t");
-    cpuState->writeToRegisters(register1, val);
+    __asm ("pushf    \n\t"
+           "pop %[flag]"
+    :[flag] "=&r"(flag));
+    std::cout<<flag<<std::endl;
 }
 
 
