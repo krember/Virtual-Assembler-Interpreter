@@ -26,5 +26,7 @@ int main() {
     std::cout<< (int)ram.at(5) <<std::endl;
 
     std::cout << *value;
+
+    //TEST
     return 0;
 }
