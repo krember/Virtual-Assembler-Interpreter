@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Cpu/Functors/SubFunctor.h>
 #include "Headers/VirtualMachine.h"
 
 int main() {
@@ -19,14 +20,19 @@ int main() {
 
     uint32_t *value = reinterpret_cast<uint32_t *>(ram.data() + 5);
 
-    std::cout << *value << std::endl;
+//    std::cout << *value << std::endl;
 
-    std::cout<< (int)ram.at(5) <<std::endl;
+//    std::cout<< (int)ram.at(5) <<std::endl;
     *value = 1;
-    std::cout<< (int)ram.at(5) <<std::endl;
+//    std::cout<< (int)ram.at(5) <<std::endl;
 
-    std::cout << *value;
+//    std::cout << *value;
 
     //TEST
+
+    cpu::CpuState cpuState;
+    cpu::SubFunctor functor(&cpuState);
+
+    functor(1,0,3,0,0,1);
     return 0;
 }

@@ -6,11 +6,11 @@
 #include "../Headers/VirtualMachine.h"
 #include "../Headers/Instruction.h"
 
-VirtualMachine::VirtualMachine() :  vMemory(new Memory()),
-                                    vNorthBridge(new NorthBridge(vMemory)),
-                                    vCpu(new cpu::CPU(vNorthBridge)),
-                                    vConsole(new Console()),
-                                    vFileLoader(new FileLoader()) {}
+VirtualMachine::VirtualMachine() : vMemory(new Memory()),
+                                   vNorthBridge(new NorthBridge(vMemory)),
+                                   vCpu(new cpu::CPU(vNorthBridge)),
+                                   vConsole(new Console()),
+                                   vFileLoader(new FileLoader()) {}
 
 void VirtualMachine::execute(std::string fileName) {
 
@@ -18,6 +18,6 @@ void VirtualMachine::execute(std::string fileName) {
     StructuredFile structuredFile = vFileLoader->load(fileName);
 
     // TODO translate to binary code
-    vMemory->loadFile(structuredFile);
+    //TODO: load to Memory
     vCpu->run();
 }

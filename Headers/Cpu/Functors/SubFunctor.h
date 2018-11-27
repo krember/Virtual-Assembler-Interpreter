@@ -8,6 +8,8 @@
 #include "Cpu/Functors/InstructionFunctor.h"
 #include "Cpu/CPUConstants.h"
 #include "Cpu/CPU.h"
+#include <stdio.h>
+#include <iostream>
 
 namespace cpu {
     class SubFunctor : public InstructionFunctor {
@@ -28,13 +30,13 @@ namespace cpu {
 
 template<typename T>
 void cpu::SubFunctor::executeSub(uint8_t register1, uint8_t register2) {
-    uint16_t flags;
+    register uint64_t flag asm("rax") = 0;
+    std::cout<<flag<<std::endl;
     T val = cpuState->getRegister<T>(register1) - cpuState->getRegister<T>(register2);
-    __asm {
-        pushf
-        pop eax
-        mov flags, eax
-    }
+    __asm ("pushf    \n\t"
+           "pop %[flag]"
+           :[flag] "=&r"(flag));
+    std::cout<<flag<<std::endl;
     cpuState->writeToRegisters(register1, val);
 }
 

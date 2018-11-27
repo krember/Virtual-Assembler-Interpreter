@@ -4,6 +4,7 @@
 
 #include <cstdint>
 #include <vector>
+#include "Flags.h"
 
 namespace cpu {
     struct CpuState {
@@ -11,7 +12,23 @@ namespace cpu {
         uint64_t ir;
         std::vector <uint8_t> generalPurposeRegisters; // R_something
         std::vector <uint32_t> addressRegisters; // A_something
-        uint16_t fla
+        Flags flags;
+
+        CpuState() : ip(0), ir(0), generalPurposeRegisters(), addressRegisters() {
+            generalPurposeRegisters.push_back(1);
+            generalPurposeRegisters.push_back(1);
+            generalPurposeRegisters.push_back(1);
+            generalPurposeRegisters.push_back(1);
+            generalPurposeRegisters.push_back(1);
+            generalPurposeRegisters.push_back(1);
+            generalPurposeRegisters.push_back(1);
+            addressRegisters.push_back(1);
+            addressRegisters.push_back(1);
+            addressRegisters.push_back(1);
+            addressRegisters.push_back(1);
+            addressRegisters.push_back(1);
+            addressRegisters.push_back(1);
+        }; //TODO for test reasons
 
         CpuState(uint32_t ip, uint64_t ir,
                  std::vector <uint8_t> generalPurposeRegisters, std::vector <uint32_t> addressRegisters);

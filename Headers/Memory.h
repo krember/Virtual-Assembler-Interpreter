@@ -19,7 +19,7 @@ public:
 };
 
 template<typename valueType>
-uint8_t Memory::read(uint32_t address) {
+valueType Memory::read(uint32_t address) {
     return *reinterpret_cast<valueType *>(data.data() + address);
 }
 

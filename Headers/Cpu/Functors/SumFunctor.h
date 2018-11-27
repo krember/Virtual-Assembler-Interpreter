@@ -27,13 +27,10 @@ namespace cpu {
 
 template<typename T>
 void cpu::SumFunctor::executeSum(uint8_t register1, uint8_t register2) {
-    uint16_t flags;
+    uint64_t register flag asm("rax") = 0;
     T val = cpuState->getRegister<T>(register1) + cpuState->getRegister<T>(register2);
-    __asm {
-        pushf
-        pop eax
-        mov flags, eax
-    }
+    __asm ( "pushf    \n\t"
+            "pop %rax \n\t");
     cpuState->writeToRegisters(register1, val);
 }
 
