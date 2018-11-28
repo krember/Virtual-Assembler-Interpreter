@@ -18,15 +18,11 @@ int main() {
     ram.push_back(0);
     ram.push_back(1);
 
-    uint32_t *value = reinterpret_cast<uint32_t *>(ram.data() + 5);
+    std::cout<< (int)ram.at(5) <<std::endl;
 
-//    std::cout << *value << std::endl;
+    *reinterpret_cast<uint32_t *>(ram.data() + 5) = 1;
 
-//    std::cout<< (int)ram.at(5) <<std::endl;
-    *value = 1;
-//    std::cout<< (int)ram.at(5) <<std::endl;
-
-//    std::cout << *value;
+    std::cout<< (int)ram.at(5) <<std::endl;
 
     //TEST
 

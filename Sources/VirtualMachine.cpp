@@ -7,8 +7,7 @@
 #include "../Headers/Instruction.h"
 
 VirtualMachine::VirtualMachine() : vMemory(new Memory()),
-                                   vNorthBridge(new NorthBridge(vMemory)),
-                                   vCpu(new cpu::CPU(vNorthBridge)),
+                                   vCpu(new cpu::CPU(vMemory)),
                                    vConsole(new Console()),
                                    vFileLoader(new FileLoader()) {}
 

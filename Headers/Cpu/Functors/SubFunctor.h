@@ -30,14 +30,15 @@ namespace cpu {
 
 template<typename T>
 void cpu::SubFunctor::executeSub(uint8_t register1, uint8_t register2) {
-    register uint64_t flag asm("rax") = 0;
+    uint64_t flag = 0;
     std::cout<<flag<<std::endl;
-    T val = cpuState->getRegister<T>(register1) - cpuState->getRegister<T>(register2);
+    T val = cpuState->readFromDataRegister<T>(register1) - cpuState->readFromDataRegister<T>(register2);
     __asm ("pushf    \n\t"
            "pop %[flag]"
            :[flag] "=&r"(flag));
     std::cout<<flag<<std::endl;
-    cpuState->writeToRegisters(register1, val);
+    cpuState->setFlags(flag);
+    cpuState->writeToDataRegisters(register1, val);
 }
 
 #endif //VIRTUAL_MACHINE_SUBFUNCTOR_H

@@ -4,13 +4,13 @@
 
 #include "Cpu/CPU.h"
 
-cpu::CPU::CPU(NorthBridge *northBridge) :
-        vNorthBridge(northBridge),
+cpu::CPU::CPU(Memory *_memory) :
+        vMemory(_memory),
         cpuState(0,0,std::vector<uint8_t>(DATA_REGISTERS_COUNT,0),
                  std::vector<uint32_t>(ADDRESS_REGISTERS_COUNT,0)){}
 
 void cpu::CPU::fetch() {
-    cpuState.ir = vNorthBridge->readInstructionFromMemory(cpuState.ip);
+    cpuState.ir = vMemory->read<uint64_t>(cpuState.ip);
 }
 
 void cpu::CPU::decode() {
@@ -29,7 +29,7 @@ void cpu::CPU::incrementIP(uint32_t offset) {
     cpuState.ip += offset;
 }
 
-cpu::CpuState cpu::CPU::getState() const {
+const cpu::CpuState& cpu::CPU::state() const {
     return cpuState;
 }
 

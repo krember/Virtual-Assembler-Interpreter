@@ -7,28 +7,26 @@
 
 
 #include <vector>
-#include "NorthBridge.h"
+#include "Memory.h"
 #include "Instruction.h"
 #include "Cpu/Functors/InstructionFunctor.h"
 #include "CpuState.h"
 
 namespace cpu {
     class CPU {
-        friend class SubFunctor;
-        friend class SumFunctor;
     public:
         /* Constructing */
-        CPU(NorthBridge *northBridge);
+        CPU(Memory *_memory);
 
         /* Public interface */
-        CpuState getState() const;
+        const CpuState& state() const;
 
         void run();
 
 
     private:
         /* Private members */
-        NorthBridge *vNorthBridge;
+        Memory *vMemory;
         CpuState cpuState;
         Instruction *instruction = 0; //TODO delele Instruction
         std::vector<cpu::InstructionFunctor *> instructionFunctors;
@@ -40,13 +38,9 @@ namespace cpu {
 
         /* Private Functions*/
         void fetch();
-
         void decode();
-
         void incrementIP();
-
         void execute();
-
         void incrementIP(uint32_t offset);
     };
 }

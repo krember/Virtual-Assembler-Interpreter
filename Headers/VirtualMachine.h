@@ -16,7 +16,6 @@ class VirtualMachine {
 private:
     /* Private members */
     Memory *vMemory;
-    NorthBridge *vNorthBridge;
     cpu::CPU *vCpu;
     FileLoader *vFileLoader;
     Console *vConsole; // TODO: add keyboard
