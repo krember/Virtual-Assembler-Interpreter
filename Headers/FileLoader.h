@@ -7,18 +7,20 @@
 
 #include <string>
 #include <fstream>
-#include "StructuredFile.h"
+#include <ObjectFile/ObjectFile.h>
+#include "ObjectFile/ObjectFile.h"
 #include "Exceptions/IOException.h"
+#include "Memory.h"
 
 class FileLoader {
 private:
-	static const std::string CODE;
+	Memory * vMemory;
 
 public:
-    FileLoader();
+    FileLoader(Memory *_memory);
 
     // Reads and parses contents of the given file. Should throw exceptions.
-    StructuredFile load(std::string fileName);
+    void load(std::string fileName);
 };
 
 

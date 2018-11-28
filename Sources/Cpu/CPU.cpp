@@ -2,6 +2,7 @@
 // Created by Narek Hovhannisyan and/or Milena Mamyan on 10/14/18.
 //
 
+#include <Cpu/CPUConstants.h>
 #include "Cpu/CPU.h"
 
 cpu::CPU::CPU(Memory *_memory) :

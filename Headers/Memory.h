@@ -15,7 +15,7 @@ public:
     valueType read(uint32_t address);
 
     template <typename valueType>
-    void write(uint8_t address, valueType data);
+    void write(uint32_t address, valueType data);
 };
 
 template<typename valueType>
@@ -24,8 +24,8 @@ valueType Memory::read(uint32_t address) {
 }
 
 template<typename valueType>
-void Memory::write(uint8_t address, valueType data) {
-    *reinterpret_cast<valueType *>(data.data() + address) = data;
+void Memory::write(uint32_t address, valueType value) {
+    *reinterpret_cast<valueType *>(data.data() + address) = value;
 }
 
 #endif //VIRTUAL_MACHINE_MEMORY_H

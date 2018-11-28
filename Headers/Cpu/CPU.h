@@ -31,11 +31,6 @@ namespace cpu {
         Instruction *instruction = 0; //TODO delele Instruction
         std::vector<cpu::InstructionFunctor *> instructionFunctors;
 
-        /* Constants*/
-        static const size_t ADDRESS_REGISTERS_COUNT = 16;
-        static const size_t DATA_REGISTERS_COUNT = 64;
-        static const std::size_t COMMAND_SIZE = 8;
-
         /* Private Functions*/
         void fetch();
         void decode();
