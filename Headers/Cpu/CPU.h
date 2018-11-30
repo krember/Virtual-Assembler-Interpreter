@@ -16,7 +16,7 @@ namespace cpu {
     class CPU {
     public:
         /* Constructing */
-        CPU(Memory *_memory);
+        explicit CPU(Memory *_memory);
 
         /* Public interface */
         const CpuState& state() const;

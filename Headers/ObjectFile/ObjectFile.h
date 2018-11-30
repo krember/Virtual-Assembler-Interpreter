@@ -2,7 +2,6 @@
 #ifndef COMPILER_NAREK_HOVHANNISYAN_OBJECTFILE_H
 #define COMPILER_NAREK_HOVHANNISYAN_OBJECTFILE_H
 
-
 #include <vector>
 #include "Header.h"
 #include "SymbolTable.h"

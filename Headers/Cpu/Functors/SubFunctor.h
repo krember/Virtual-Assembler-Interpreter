@@ -6,7 +6,7 @@
 #define VIRTUAL_MACHINE_SUBFUNCTOR_H
 
 #include "Cpu/Functors/InstructionFunctor.h"
-#include "Cpu/CPUConstants.h"
+#include "Config/CPUConstants.h"
 #include "Cpu/CPU.h"
 #include <stdio.h>
 #include <iostream>

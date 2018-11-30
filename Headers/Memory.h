@@ -11,6 +11,8 @@ class Memory {
 private:
     std::vector<uint8_t> data;
 public:
+    Memory(size_t memorySize, size_t stackSize);
+
     template <typename valueType>
     valueType read(uint32_t address);
 

@@ -1,5 +1,5 @@
 #include <Cpu/Functors/SumFunctor.h>
-#include <Cpu/CPUConstants.h>
+#include <Config/CPUConstants.h>
 #include <Exceptions/ExecutionException.h>
 
 cpu::SumFunctor::SumFunctor(cpu::CpuState *_cpuState) : cpuState(_cpuState) {}

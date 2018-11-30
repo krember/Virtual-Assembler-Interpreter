@@ -1,5 +1,4 @@
 #include <iostream>
-#include <Cpu/Functors/SubFunctor.h>
 #include "Headers/VirtualMachine.h"
 
 int main() {
@@ -32,6 +31,6 @@ int main() {
 //    functor(1,0,3,0,0,1);
 
     VirtualMachine *vm = new VirtualMachine();
-    vm -> execute("C:\\Users\\mmamyan\\Documents\\GitHub\\Virtual-Assembler-Interpreter\\cmake-build-debug\\input.exe");
+    vm -> execute("inputMac.exe");
     return 0;
 }

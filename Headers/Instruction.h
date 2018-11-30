@@ -5,7 +5,7 @@
 #ifndef VIRTUAL_MACHINE_OPCODEPARSER_H
 #define VIRTUAL_MACHINE_OPCODEPARSER_H
 
-#include "LanguageConstants.h"
+#include "Config/LanguageConstants.h"
 #include <cstdint>
 
 class Instruction {

@@ -13,7 +13,7 @@ add_executable(Virtual_Machine
         Headers/FileLoader.h
         Headers/Instruction.h
         Headers/Exceptions/IOException.h
-        Headers/LanguageConstants.h
+        Headers/Config/LanguageConstants.h
         Headers/Memory.h
         Headers/StructuredFile.h
         Headers/VirtualMachine.h
@@ -26,7 +26,7 @@ add_executable(Virtual_Machine
         Sources/Exceptions/IOException.cpp
         Sources/StructuredFile.cpp
         Sources/VirtualMachine.cpp
-        main.cpp Headers/Cpu/CPUConstants.h
+        main.cpp Headers/Config/CPUConstants.h
         Headers/Cpu/Functors/InstructionFunctor.h
         Sources/Cpu/Functors/SubFunctor.cpp
         Headers/Cpu/Functors/SubFunctor.h
@@ -39,4 +39,4 @@ add_executable(Virtual_Machine
         Sources/Cpu/Flags.cpp Headers/Cpu/Flags.h
         Headers/ObjectFile/Header.h Sources/ObjectFile/Header.cpp
         Headers/ObjectFile/ObjectFile.h Sources/ObjectFile/ObjectFile.cpp
-        Headers/ObjectFile/SymbolTable.h Sources/ObjectFile/SymbolTable.cpp)
+        Headers/ObjectFile/SymbolTable.h Sources/ObjectFile/SymbolTable.cpp Sources/Memory.cpp Headers/Config/VMConstants.h)

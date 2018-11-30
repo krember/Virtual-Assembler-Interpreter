@@ -1,6 +1,6 @@
 
 #include <Cpu/CPU.h>
-#include <Cpu/CPUConstants.h>
+#include <Config/CPUConstants.h>
 #include "ObjectFile/ObjectFile.h"
 
 ObjectFile::ObjectFile() {
@@ -29,7 +29,7 @@ void ObjectFile::generateHeader() {
 long ObjectFile::sizeOfCodeSection() {
     long size = 0;
     for(auto const &code : m_codeSection) {
-        size += m_codeSection.size() * COMMAND_SIZE;
+        size += m_codeSection.size() * cpu::COMMAND_SIZE;
     }
     return size;
 }

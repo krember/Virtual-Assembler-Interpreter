@@ -3,10 +3,11 @@
 //
 
 #include <utility>
+#include <Config/VMConstants.h>
 #include "../Headers/VirtualMachine.h"
 #include "../Headers/Instruction.h"
 
-VirtualMachine::VirtualMachine() : vMemory(new Memory()),
+VirtualMachine::VirtualMachine() : vMemory(new Memory(vm::DEFAULT_MEMORY_SIZE, vm::DEFAULT_STACK_SIZE)),
                                    vCpu(new cpu::CPU(vMemory)),
                                    vConsole(new Console()),
                                    vFileLoader(new FileLoader(vMemory)) {}
