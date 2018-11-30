@@ -25,14 +25,13 @@ void FileLoader::load(std::string fileName) {
 
     // TODO Chage exe file structure
     uint64_t command;
-    while(exe >> command) {
+    while(exe.read(reinterpret_cast<char *>(&command), sizeof(command))) {
         if(command == 0)
             break;
         vMemory->write<uint64_t>(address, command);
         address += 8;
     }
 }
-
 
 
 

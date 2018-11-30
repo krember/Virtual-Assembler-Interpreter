@@ -23,5 +23,4 @@ public:
     void load(std::string fileName);
 };
 
-
 #endif //VIRTUAL_MACHINE_LOADER_H
