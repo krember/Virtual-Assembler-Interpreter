@@ -30,12 +30,12 @@ namespace cpu {
 template<typename T>
 void cpu::MulFunctor::executeMul(uint8_t register1, uint8_t register2) {
     uint64_t flag = 0;
-    std::cout << flag << std::endl;
+
     T val = cpuState->readFromDataRegister<T>(register1) * cpuState->readFromDataRegister<T>(register2);
     __asm ("pushf    \n\t"
            "pop %[flag]"
     :[flag] "=&r"(flag));
-    std::cout << flag << std::endl;
+
     cpuState->setFlags(flag);
     cpuState->writeToDataRegisters(register1, val);
 }

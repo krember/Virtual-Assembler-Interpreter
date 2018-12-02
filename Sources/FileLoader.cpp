@@ -21,8 +21,8 @@ void FileLoader::load(std::string fileName) {
     uint32_t codeSectionOffset;
     exe.read(reinterpret_cast<char *>(&symbolTableOffset), sizeof(symbolTableOffset));
     exe.read(reinterpret_cast<char *>(&dataSectionOffset), sizeof(dataSectionOffset));
+    exe.read(reinterpret_cast<char *>(&codeSectionOffset), sizeof(codeSectionOffset));
     codeSectionOffset = 12;
-//    exe.read(reinterpret_cast<char *>(&codeSectionOffset), sizeof(codeSectionOffset));
 
     // TODO Chage exe file structure
     uint64_t command;

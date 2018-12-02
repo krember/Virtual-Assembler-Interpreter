@@ -37,6 +37,7 @@ namespace cpu {
         void incrementIP();
         void execute();
         void incrementIP(uint32_t offset);
+        void initFunctors(std::vector<cpu::InstructionFunctor*> &_instructionFunctors);
     };
 }
 

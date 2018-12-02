@@ -10,8 +10,8 @@ Instruction::Instruction(uint64_t instructionCode) {
     uint8_t * bytes = reinterpret_cast<uint8_t *>(&instructionCode);
 
     opCode = bytes[0];
-    dataSize = bytes[1] & DATA_SIZE_MASK >> 6;
-    jumpExtension = bytes[1] & JUMP_EXTENSION_MASK >> 2;
+    dataSize = (bytes[1] & DATA_SIZE_MASK) >> 6;
+    jumpExtension = (bytes[1] & JUMP_EXTENSION_MASK) >> 2;
     registersOrder = bytes[1] & REGISTERS_ORDER_MASK;
     register1 = bytes[2];
     register2 = bytes[3];

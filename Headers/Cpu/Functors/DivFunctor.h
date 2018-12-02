@@ -30,10 +30,8 @@ namespace cpu {
 template<typename T>
 void cpu::DivFunctor::executeDiv(uint8_t register1, uint8_t register2) {
     uint64_t flag = 0;
-    std::cout << flag << std::endl;
 
     T secondArgument = cpuState->readFromDataRegister<T>(register2);
-
     T val;
     if(secondArgument == 0) {
         val = std::numeric_limits<T>::infinity();
@@ -43,7 +41,7 @@ void cpu::DivFunctor::executeDiv(uint8_t register1, uint8_t register2) {
     __asm ("pushf    \n\t"
            "pop %[flag]"
     :[flag] "=&r"(flag));
-    std::cout << flag << std::endl;
+
     cpuState->setFlags(flag);
     cpuState->writeToDataRegisters(register1, val);
 }

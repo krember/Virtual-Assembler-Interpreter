@@ -30,13 +30,12 @@ namespace cpu {
 template<typename T>
 void cpu::AssignFunctor::executeAssign(uint8_t register1, uint32_t literal) {
     uint64_t flag = 0;
-    std::cout << flag << std::endl;
 
-    T val = reinterpret_cast<T>(literal);
+    T val = T(literal);
     __asm ("pushf    \n\t"
            "pop %[flag]"
     :[flag] "=&r"(flag));
-    std::cout << flag << std::endl;
+
     cpuState->setFlags(flag);
     cpuState->writeToDataRegisters(register1, val);
 }
