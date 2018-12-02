@@ -47,4 +47,7 @@ add_executable(Virtual_Machine
         Sources/Cpu/Functors/DivFunctor.cpp Headers/Cpu/Functors/DivFunctor.h
         Sources/Cpu/Functors/AssignFunctor.cpp Headers/Cpu/Functors/AssignFunctor.h
         Sources/Cpu/Functors/JumpFunctor.cpp Headers/Cpu/Functors/JumpFunctor.h
-        Sources/Cpu/Functors/DecFunctor.cpp Headers/Cpu/Functors/DecFunctor.h)
+        Sources/Cpu/Functors/DecFunctor.cpp Headers/Cpu/Functors/DecFunctor.h
+        Sources/Cpu/Functors/AssignFunctor.cpp Headers/Cpu/Functors/AssignFunctor.h
+        Sources/Cpu/Functors/NopFunctor.cpp Headers/Cpu/Functors/NopFunctor.h
+        Sources/Cpu/Functors/IncFunctor.cpp Headers/Cpu/Functors/IncFunctor.h)
