@@ -39,4 +39,10 @@ add_executable(Virtual_Machine
         Sources/Cpu/Flags.cpp Headers/Cpu/Flags.h
         Headers/ObjectFile/Header.h Sources/ObjectFile/Header.cpp
         Headers/ObjectFile/ObjectFile.h Sources/ObjectFile/ObjectFile.cpp
-        Headers/ObjectFile/SymbolTable.h Sources/ObjectFile/SymbolTable.cpp Sources/Memory.cpp Headers/Config/VMConstants.h)
+        Headers/ObjectFile/SymbolTable.h Sources/ObjectFile/SymbolTable.cpp
+        Sources/Memory.cpp
+        Headers/Config/VMConstants.h
+        Headers/ObjectFile/SymbolTable.h Sources/ObjectFile/SymbolTable.cpp
+        Sources/Cpu/Functors/MulFunctor.cpp Headers/Cpu/Functors/MulFunctor.h
+        Sources/Cpu/Functors/DivFunctor.cpp Headers/Cpu/Functors/DivFunctor.h
+        Sources/Cpu/Functors/AssignFunctor.cpp Headers/Cpu/Functors/AssignFunctor.h)

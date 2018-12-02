@@ -20,7 +20,7 @@ namespace cpu {
             OVERFLOW = 0x0001 << 11
         };
     
-        uint16_t flags;
+        uint16_t flags; //TODO : make flags uint64_t or change in the Functors
         
     public:
         Flags(uint16_t val = 0);
