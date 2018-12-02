@@ -45,4 +45,6 @@ add_executable(Virtual_Machine
         Headers/ObjectFile/SymbolTable.h Sources/ObjectFile/SymbolTable.cpp
         Sources/Cpu/Functors/MulFunctor.cpp Headers/Cpu/Functors/MulFunctor.h
         Sources/Cpu/Functors/DivFunctor.cpp Headers/Cpu/Functors/DivFunctor.h
-        Sources/Cpu/Functors/AssignFunctor.cpp Headers/Cpu/Functors/AssignFunctor.h)
+        Sources/Cpu/Functors/AssignFunctor.cpp Headers/Cpu/Functors/AssignFunctor.h
+        Sources/Cpu/Functors/JumpFunctor.cpp Headers/Cpu/Functors/JumpFunctor.h
+        Sources/Cpu/Functors/DecFunctor.cpp Headers/Cpu/Functors/DecFunctor.h)
