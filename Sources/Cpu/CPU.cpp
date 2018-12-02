@@ -49,12 +49,9 @@ void cpu::CPU::execute() {
 }
 
 void cpu::CPU::incrementIP() {
-	incrementIP(1);
+    ++cpuState.ip;
 }
 
-void cpu::CPU::incrementIP(uint32_t offset) {
-    cpuState.ip += offset;
-}
 
 const cpu::CpuState& cpu::CPU::state() const {
     return cpuState;
