@@ -7,11 +7,10 @@
 
 
 #include <Cpu/CpuState.h>
+#include "InstructionFunctor.h"
 
 namespace cpu {
-    class NopFunctor {
-    private:
-        CpuState *cpuState;
+    class NopFunctor : public InstructionFunctor {
     public:
         NopFunctor(cpu::CpuState*state);
 

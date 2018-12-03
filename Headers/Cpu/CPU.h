@@ -7,7 +7,7 @@
 
 
 #include <vector>
-#include "Memory.h"
+#include "VM/Memory.h"
 #include "Instruction.h"
 #include "Cpu/Functors/InstructionFunctor.h"
 #include "CpuState.h"
@@ -16,17 +16,17 @@ namespace cpu {
     class CPU {
     public:
         /* Constructing */
-        explicit CPU(Memory *_memory);
+        explicit CPU(vm::Memory *_memory);
 
         /* Public interface */
         const CpuState& state() const;
 
         void run();
-
+        void runOnce();
 
     private:
         /* Private members */
-        Memory *vMemory;
+        vm::Memory *vMemory;
         CpuState cpuState;
         Instruction *instruction = 0; //TODO delele Instruction
         std::vector<cpu::InstructionFunctor *> instructionFunctors;

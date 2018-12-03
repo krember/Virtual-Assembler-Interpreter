@@ -7,10 +7,24 @@
 #include <Cpu/Functors/SumFunctor.h>
 #include <Cpu/Functors/SubFunctor.h>
 #include <Cpu/Functors/MulFunctor.h>
+#include <Cpu/Functors/NopFunctor.h>
+#include <Cpu/Functors/JumpFunctor.h>
+#include <Cpu/Functors/AssignFunctor.h>
+#include <Cpu/Functors/MovFunctor.h>
+#include <Cpu/Functors/SwapFunctor.h>
+#include <Cpu/Functors/AndFunctor.h>
+#include <Cpu/Functors/OrFunctor.h>
+#include <Cpu/Functors/XorFunctor.h>
+#include <Cpu/Functors/NotFunctor.h>
+#include <Cpu/Functors/NandFunctor.h>
+#include <Cpu/Functors/NorFunctor.h>
+#include <Cpu/Functors/DivFunctor.h>
+#include <Cpu/Functors/IncFunctor.h>
+#include <Cpu/Functors/DecFunctor.h>
 
 #include "Cpu/CPU.h"
 
-cpu::CPU::CPU(Memory *_memory) :
+cpu::CPU::CPU(vm::Memory *_memory) :
         vMemory(_memory),
         cpuState(0,0,std::vector<uint8_t>(DATA_REGISTERS_COUNT,0),
                  std::vector<uint32_t>(ADDRESS_REGISTERS_COUNT,0)){
@@ -18,19 +32,23 @@ cpu::CPU::CPU(Memory *_memory) :
 }
 
 void cpu::CPU::initFunctors(std::vector<cpu::InstructionFunctor *> &_instructionFunctors) {
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
-    _instructionFunctors.push_back(new MulFunctor(&cpuState));
+    _instructionFunctors.push_back(new NopFunctor(&cpuState));
+    _instructionFunctors.push_back(new JumpFunctor(&cpuState));
+    _instructionFunctors.push_back(new AssignFunctor(&cpuState));
+    _instructionFunctors.push_back(new MovFunctor(&cpuState));
+    _instructionFunctors.push_back(new SwapFunctor(&cpuState));
+    _instructionFunctors.push_back(new AndFunctor(&cpuState));
+    _instructionFunctors.push_back(new OrFunctor(&cpuState));
+    _instructionFunctors.push_back(new XorFunctor(&cpuState));
+    _instructionFunctors.push_back(new NotFunctor(&cpuState));
+    _instructionFunctors.push_back(new NandFunctor(&cpuState));
+    _instructionFunctors.push_back(new NorFunctor(&cpuState));
     _instructionFunctors.push_back(new SumFunctor(&cpuState));
     _instructionFunctors.push_back(new SubFunctor(&cpuState));
+    _instructionFunctors.push_back(new MulFunctor(&cpuState));
+    _instructionFunctors.push_back(new DivFunctor(&cpuState));
+    _instructionFunctors.push_back(new IncFunctor(&cpuState));
+    _instructionFunctors.push_back(new DecFunctor(&cpuState));
 }
 
 void cpu::CPU::fetch() {
@@ -62,7 +80,13 @@ void cpu::CPU::run() {
         fetch();
         decode();
         incrementIP();
-        //TODO wait for enter
         execute();
     }
+}
+
+void cpu::CPU::runOnce() {
+    fetch();
+    decode();
+    incrementIP();
+    execute();
 }

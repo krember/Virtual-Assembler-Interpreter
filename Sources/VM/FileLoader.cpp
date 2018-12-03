@@ -2,9 +2,9 @@
 // Created by Narek Hovhannisyan and/or Milena Mamyan on 10/14/18.
 //
 
-#include "../Headers/FileLoader.h"
+#include "VM/FileLoader.h"
 
-FileLoader::FileLoader(Memory *_memory) : vMemory(_memory) {
+FileLoader::FileLoader(vm::Memory *_memory) : vMemory(_memory) {
 
 }
 

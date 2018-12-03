@@ -11,24 +11,22 @@
 
 namespace cpu {
     class JumpFunctor : public InstructionFunctor {
-    private:
-        cpu::CpuState *cpuState;
     public:
         JumpFunctor(cpu::CpuState *state);
 
         virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
                                 uint8_t register1, uint8_t register2, uint32_t literal);
 
-        void jump(uint8_t dataSize, uint32_t literal);
+        void execute(uint8_t dataSize, uint32_t literal);
 
         template<typename T>
-        void executeJump(uint32_t literal);
+        void executeOp(uint32_t literal);
     };
 }
 
 template<typename T>
-void cpu::JumpFunctor::executeJump(uint32_t literal) {
-    uint64_t flag = 0;
+void cpu::JumpFunctor::executeOp(uint32_t literal) {
+    uint16_t flag = 0;
 
     cpuState->ip = literal;
     __asm ("pushf    \n\t"

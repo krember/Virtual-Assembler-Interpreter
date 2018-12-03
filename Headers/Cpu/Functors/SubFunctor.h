@@ -8,29 +8,25 @@
 #include "Cpu/Functors/InstructionFunctor.h"
 #include "Config/CPUConstants.h"
 #include "Cpu/CPU.h"
+#include "BinaryRegisterwiseFunctor.h"
 #include <stdio.h>
 #include <iostream>
 
 namespace cpu {
-    class SubFunctor : public InstructionFunctor {
-    private:
-        cpu::CpuState *cpuState;
+    class SubFunctor : public BinaryRegisterwiseFunctor {
     public:
-        SubFunctor(cpu::CpuState *state);
+        explicit SubFunctor(cpu::CpuState *state);
 
-        virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                                uint8_t register1, uint8_t register2, uint32_t literal);
-
-        void sub(uint8_t dataSize, uint8_t register1, uint8_t register2);
+        virtual void execute(uint8_t dataSize, uint8_t register1, uint8_t register2);
 
         template<typename T>
-        void executeSub(uint8_t register1, uint8_t register2);
+        void executeOp(uint8_t register1, uint8_t register2);
     };
 }
 
 template<typename T>
-void cpu::SubFunctor::executeSub(uint8_t register1, uint8_t register2) {
-    uint64_t flag = 0;
+void cpu::SubFunctor::executeOp(uint8_t register1, uint8_t register2) {
+    uint16_t flag = 0;
 
     T val = cpuState->readFromDataRegister<T>(register1) - cpuState->readFromDataRegister<T>(register2);
     __asm ("pushf    \n\t"

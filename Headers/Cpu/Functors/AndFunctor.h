@@ -1,20 +1,18 @@
 //
-// Created by Narek Hovhannisyan and/or Milena Mamyan on 12/1/2018.
+// Created by Narek Hovhannisyan and/or Milena Mamyan.
 //
 
-#ifndef VIRTUAL_MACHINE_MULFUNCTOR_H
-#define VIRTUAL_MACHINE_MULFUNCTOR_H
-
+#ifndef VIRTUAL_MACHINE_ANDFUNCTOR_H
+#define VIRTUAL_MACHINE_ANDFUNCTOR_H
 
 #include <Cpu/CpuState.h>
-#include <iostream>
 #include "InstructionFunctor.h"
 #include "BinaryRegisterwiseFunctor.h"
 
 namespace cpu {
-    class MulFunctor : public BinaryRegisterwiseFunctor {
+    class AndFunctor : public BinaryRegisterwiseFunctor {
     public:
-        explicit MulFunctor(cpu::CpuState *state);
+        AndFunctor(cpu::CpuState *state);
 
         virtual void execute(uint8_t dataSize, uint8_t register1, uint8_t register2);
 
@@ -24,10 +22,10 @@ namespace cpu {
 }
 
 template<typename T>
-void cpu::MulFunctor::executeOp(uint8_t register1, uint8_t register2) {
+void cpu::AndFunctor::executeOp(uint8_t register1, uint8_t register2) {
     uint16_t flag = 0;
 
-    T val = cpuState->readFromDataRegister<T>(register1) * cpuState->readFromDataRegister<T>(register2);
+    T val = cpuState->readFromDataRegister<T>(register1) & cpuState->readFromDataRegister<T>(register2);
     __asm ("pushf    \n\t"
            "pop %[flag]"
     :[flag] "=&r"(flag));
@@ -36,4 +34,4 @@ void cpu::MulFunctor::executeOp(uint8_t register1, uint8_t register2) {
     cpuState->writeToDataRegisters(register1, val);
 }
 
-#endif //VIRTUAL_MACHINE_MULFUNCTOR_H
+#endif //VIRTUAL_MACHINE_ANDFUNCTOR_H

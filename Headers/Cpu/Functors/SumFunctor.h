@@ -8,27 +8,23 @@
 #include <cstdint>
 #include <iostream>
 #include "Cpu/CPU.h"
+#include "BinaryRegisterwiseFunctor.h"
 
 namespace cpu {
-    class SumFunctor : public InstructionFunctor {
-    private:
-        cpu::CpuState *cpuState;
+    class SumFunctor : public BinaryRegisterwiseFunctor {
     public:
-        SumFunctor(cpu::CpuState *state);
+        explicit SumFunctor(cpu::CpuState *state);
 
-        virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                                uint8_t register1, uint8_t register2, uint32_t literal);
-
-        void sum(uint8_t dataSize, uint8_t register1, uint8_t register2);
+        virtual void execute(uint8_t dataSize, uint8_t register1, uint8_t register2);
 
         template<typename T>
-        void executeSum(uint8_t register1, uint8_t register2);
+        void executeOp(uint8_t register1, uint8_t register2);
     };
 }
 
 template<typename T>
-void cpu::SumFunctor::executeSum(uint8_t register1, uint8_t register2) {
-    uint64_t flag = 0;
+void cpu::SumFunctor::executeOp(uint8_t register1, uint8_t register2) {
+    uint16_t flag = 0;
 
     T val = cpuState->readFromDataRegister<T>(register1) + cpuState->readFromDataRegister<T>(register2);
     __asm ("pushf    \n\t"

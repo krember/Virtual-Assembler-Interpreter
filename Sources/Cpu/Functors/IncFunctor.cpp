@@ -6,7 +6,7 @@
 #include <Exceptions/ExecutionException.h>
 #include "Cpu/Functors/IncFunctor.h"
 
-cpu::IncFunctor::IncFunctor(cpu::CpuState *_cpuState) : cpuState(_cpuState) {}
+cpu::IncFunctor::IncFunctor(cpu::CpuState *_cpuState) : InstructionFunctor(_cpuState) {}
 
 void cpu::IncFunctor::operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
                                  uint8_t register1, uint8_t register2, uint32_t literal) {
@@ -16,26 +16,26 @@ void cpu::IncFunctor::operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_
             throw ExecutionException("No suitable operation found for given data types.");
         case RegisterOrder::RA:
         case RegisterOrder::RR:
-            inc(dataSize, register1);
+            execute(dataSize, register1);
             break;
         default:
             throw ExecutionException("Unrecognized register types found - " + registersOrder);
     }
 }
 
-void cpu::IncFunctor::inc(uint8_t dataSize, uint8_t register1) {
+void cpu::IncFunctor::execute(uint8_t dataSize, uint8_t register1) {
     switch (dataSize) {
         case DataSize::B:
-            executeInc<uint8_t>(register1);
+            executeOp<uint8_t>(register1);
             break;
         case DataSize::W:
-            executeInc<uint16_t>(register1);
+            executeOp<uint16_t>(register1);
             break;
         case DataSize::DW:
-            executeInc<uint32_t>(register1);
+            executeOp<uint32_t>(register1);
             break;
         case DataSize::QW:
-            executeInc<uint64_t>(register1);
+            executeOp<uint64_t>(register1);
             break;
         default:
             throw ExecutionException("Unrecognized data size found - " + dataSize);

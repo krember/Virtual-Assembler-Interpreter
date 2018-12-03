@@ -14,12 +14,12 @@
 
 class FileLoader {
 private:
-	Memory * vMemory;
+	vm::Memory * vMemory;
 
 public:
-    FileLoader(Memory *_memory);
+    FileLoader(vm::Memory *_memory);
 
-    // Reads and parses contents of the given file. Should throw exceptions.
+    // Loads contents of the given file to the memory.
     void load(std::string fileName);
 };
 

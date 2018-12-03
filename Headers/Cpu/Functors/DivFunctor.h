@@ -9,27 +9,23 @@
 #include <iostream>
 #include <limits>
 #include "InstructionFunctor.h"
+#include "BinaryRegisterwiseFunctor.h"
 
 namespace cpu {
-    class DivFunctor : public InstructionFunctor {
-    private:
-        cpu::CpuState *cpuState;
+    class DivFunctor : public BinaryRegisterwiseFunctor {
     public:
-        DivFunctor(cpu::CpuState *state);
+        explicit DivFunctor(cpu::CpuState *state);
 
-        virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                                uint8_t register1, uint8_t register2, uint32_t literal);
-
-        void div(uint8_t dataSize, uint8_t register1, uint8_t register2);
+        virtual void execute(uint8_t dataSize, uint8_t register1, uint8_t register2);
 
         template<typename T>
-        void executeDiv(uint8_t register1, uint8_t register2);
+        void executeOp(uint8_t register1, uint8_t register2);
     };
 }
 
 template<typename T>
-void cpu::DivFunctor::executeDiv(uint8_t register1, uint8_t register2) {
-    uint64_t flag = 0;
+void cpu::DivFunctor::executeOp(uint8_t register1, uint8_t register2) {
+    uint16_t flag = 0;
 
     T secondArgument = cpuState->readFromDataRegister<T>(register2);
     T val;

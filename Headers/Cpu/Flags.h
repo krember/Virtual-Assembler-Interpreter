@@ -13,10 +13,8 @@ namespace cpu {
         enum Masks
         {
             CARRY = 0x0001,
-            PARITY = 0x0001 << 2,
             ZERO = 0x0001 << 6,
             SIGN = 0x0001 << 7,
-            TRAP = 0x0001 << 9,
             OVERFLOW = 0x0001 << 11
         };
     
@@ -25,17 +23,13 @@ namespace cpu {
     public:
         Flags(uint16_t val = 0);
     
-        bool getTrap();
         bool getCarry();
-        bool getParity();
         bool getZero();
         bool getSign();
         bool getOverflow();
         uint16_t getFlags(); // TODO: NOTE: Modified shitty
     
-        void setTrap(bool trap);
         void setCarry(bool carry );
-        void setParity(bool parity);
         void setZero(bool zero);
         void setSign(bool negative);
         void setOverflow(bool overflow);

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Headers/VirtualMachine.h"
+#include "VM/VirtualMachine.h"
 
 int main() {
 
@@ -30,7 +30,7 @@ int main() {
 //
 //    functor(1,0,3,0,0,1);
 
-    VirtualMachine *vm = new VirtualMachine();
+    vm::VirtualMachine *vm = new vm::VirtualMachine();
     vm -> execute("inputMac.exe");
     return 0;
 }

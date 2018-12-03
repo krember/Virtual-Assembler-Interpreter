@@ -8,15 +8,8 @@ cpu::Flags::Flags(uint16_t  val)
         : flags(val) {
 }
 
-bool cpu::Flags::getTrap() {
-    return (flags & uint16_t(Masks::TRAP)) != 0; }
-
 bool cpu::Flags::getCarry() {
     return (flags & uint16_t(Masks::CARRY)) != 0;
-}
-
-bool cpu::Flags::getParity() {
-    return (flags & uint16_t(Masks::PARITY)) != 0;
 }
 
 bool cpu::Flags::getZero() {
@@ -35,16 +28,8 @@ uint16_t cpu::Flags::getFlags() {
     return flags;
 }
 
-void cpu::Flags::setTrap(bool trap) {
-    flags = trap ? (flags | uint16_t(Masks::TRAP)) : (flags & ~uint16_t(Masks::TRAP));
-}
-
 void cpu::Flags::setCarry(bool carry) {
     flags = carry ? (flags | uint16_t(Masks::CARRY)) : (flags & ~uint16_t(Masks::CARRY));
-}
-
-void cpu::Flags::setParity(bool parity) {
-    flags = parity ? (flags | uint16_t(Masks::PARITY)) : (flags & ~uint16_t(Masks::PARITY));
 }
 
 void cpu::Flags::setZero(bool zero) {

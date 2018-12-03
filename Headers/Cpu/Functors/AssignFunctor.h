@@ -12,32 +12,22 @@
 
 namespace cpu {
     class AssignFunctor : public InstructionFunctor {
-    private:
-        cpu::CpuState *cpuState;
     public:
         AssignFunctor(cpu::CpuState *state);
 
         virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
                                 uint8_t register1, uint8_t register2, uint32_t literal);
 
-        void assign(uint8_t dataSize, uint8_t register1, uint32_t literal);
+        void execute(uint8_t dataSize, uint8_t register1, uint32_t literal);
 
         template<typename T>
-        void executeAssign(uint8_t register1, uint32_t literal);
+        void executeOp(uint8_t register1, uint32_t literal);
     };
 }
 
 template<typename T>
-void cpu::AssignFunctor::executeAssign(uint8_t register1, uint32_t literal) {
-    uint64_t flag = 0;
-
-    T val = T(literal);
-    __asm ("pushf    \n\t"
-           "pop %[flag]"
-    :[flag] "=&r"(flag));
-
-    cpuState->setFlags(flag);
-    cpuState->writeToDataRegisters(register1, val);
+void cpu::AssignFunctor::executeOp(uint8_t register1, uint32_t literal) {
+    cpuState->writeToDataRegisters(register1, T(literal));
 }
 
 

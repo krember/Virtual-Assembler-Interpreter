@@ -1,10 +1,14 @@
+//
+// Created by Narek Hovhannisyan and/or Milena Mamyan.
+//
 
+#include "Cpu/Functors/NorFunctor.h"
+#include <Config/CPUConstants.h>
 #include <Exceptions/ExecutionException.h>
-#include "Cpu/Functors/SubFunctor.h"
 
-cpu::SubFunctor::SubFunctor(cpu::CpuState *_cpuState) : BinaryRegisterwiseFunctor(_cpuState) {}
+cpu::NorFunctor::NorFunctor(cpu::CpuState *_cpuState) : BinaryRegisterwiseFunctor(_cpuState) {}
 
-void cpu::SubFunctor::execute(uint8_t dataSize, uint8_t register1, uint8_t register2) {
+void cpu::NorFunctor::execute(uint8_t dataSize, uint8_t register1, uint8_t register2) {
     switch (dataSize) {
         case DataSize::B:
             executeOp<uint8_t>(register1, register2);
