@@ -4,6 +4,7 @@
 
 #include <cstdint>
 #include <vector>
+#include <iostream>
 #include "Flags.h"
 
 namespace cpu {
@@ -66,22 +67,23 @@ namespace cpu {
 
 template<typename valueType>
 valueType cpu::CpuState::readFromDataRegister(uint32_t address) {
-    return *reinterpret_cast<valueType *>(generalPurposeRegisters.data() + address);
+    return *reinterpret_cast<valueType *>(&generalPurposeRegisters[0] + address);
 }
 
 template<typename valueType>
 void cpu::CpuState::writeToDataRegisters(uint8_t address, valueType data) {
-    *reinterpret_cast<valueType *>(generalPurposeRegisters.data() + address) = data;
+//    std::cout << generalPurposeRegisters[0] << std::endl;
+    *reinterpret_cast<valueType *>(&generalPurposeRegisters[0] + address) = data;
 }
 
 template<typename valueType>
 valueType cpu::CpuState::readFromAddressRegister(uint32_t address) {
-    return *reinterpret_cast<valueType *>(addressRegisters.data() + address);
+    return *reinterpret_cast<valueType *>(&addressRegisters[0] + address);
 }
 
 template<typename valueType>
 void cpu::CpuState::writeToAddressRegisters(uint8_t address, valueType data) {
-    *reinterpret_cast<valueType *>(addressRegisters.data() + address) = data;
+    *reinterpret_cast<valueType *>(&addressRegisters[0] + address) = data;
 }
 
 #endif //VIRTUAL_MACHINE_CPUSTATE_H

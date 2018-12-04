@@ -5,6 +5,6 @@
 #include <Cpu/CpuState.h>
 #include "Cpu/Functors/InstructionFunctor.h"
 
-cpu::InstructionFunctor::InstructionFunctor(cpu::CpuState *_state) {
+cpu::InstructionFunctor::InstructionFunctor(cpu::CpuState *_state) : cpuState(_state) {
 
 }

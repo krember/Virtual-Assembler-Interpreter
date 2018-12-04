@@ -22,12 +22,12 @@ namespace cpu {
         const CpuState& state() const;
 
         void run();
-        void runOnce();
+        void step();
 
     private:
         /* Private members */
         vm::Memory *vMemory;
-        CpuState cpuState;
+        CpuState *cpuState;
         Instruction *instruction = 0; //TODO delele Instruction
         std::vector<cpu::InstructionFunctor *> instructionFunctors;
 
