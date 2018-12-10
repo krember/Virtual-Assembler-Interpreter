@@ -7,6 +7,7 @@
 
 #include <cstdint>
 #include <iostream>
+#include <Config/CPUConstants.h>
 #include "Cpu/CPU.h"
 
 namespace cpu {
@@ -14,26 +15,20 @@ namespace cpu {
     public:
         JumpFunctor(cpu::CpuState *state);
 
-        virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                                uint8_t register1, uint8_t register2, uint32_t literal);
+        virtual void operator()(Instruction & instruction);
 
-        void execute(uint8_t dataSize, uint32_t literal);
+        void execute(uint8_t dataSize, uint8_t jumpExtension, uint32_t literal);
 
         template<typename T>
-        void executeOp(uint32_t literal);
+        void executeOp(uint8_t jumpExtension, uint32_t literal);
     };
 }
 
 template<typename T>
-void cpu::JumpFunctor::executeOp(uint32_t literal) {
-    uint16_t flag = 0;
-
-    cpuState->ip = literal;
-    __asm ("pushf    \n\t"
-           "pop %[flag]"
-    :[flag] "=&r"(flag));
-
-    cpuState->setFlags(flag);
+void cpu::JumpFunctor::executeOp(uint8_t jumpExtension, uint32_t literal) {
+    if (cpuState->getFlags().checkCondition(JumpCondition(jumpExtension))) {
+        cpuState->ip = literal;
+    }
 }
 
 #endif //VIRTUAL_MACHINE_JUMPFUNCTOR_H

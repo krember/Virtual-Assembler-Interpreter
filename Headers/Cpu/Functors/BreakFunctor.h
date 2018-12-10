@@ -2,21 +2,21 @@
 // Created by Narek Hovhannisyan and/or Milena Mamyan.
 //
 
-#ifndef VIRTUAL_MACHINE_NOP_H
-#define VIRTUAL_MACHINE_NOP_H
-
+#ifndef VIRTUAL_MACHINE_BREAKFUNCTOR_H
+#define VIRTUAL_MACHINE_BREAKFUNCTOR_H
 
 #include <Cpu/CpuState.h>
 #include "InstructionFunctor.h"
 
 namespace cpu {
-    class NopFunctor : public InstructionFunctor {
+    class BreakFunctor : public InstructionFunctor {
     public:
-        NopFunctor(cpu::CpuState*state);
+        BreakFunctor(cpu::CpuState*state);
 
         virtual void operator()(Instruction & instruction);
     };
 }
 
 
-#endif //VIRTUAL_MACHINE_NOP_H
+
+#endif //VIRTUAL_MACHINE_BREAKFUNCTOR_H

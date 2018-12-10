@@ -5,7 +5,6 @@
 #ifndef VIRTUAL_MACHINE_CPU_H
 #define VIRTUAL_MACHINE_CPU_H
 
-
 #include <vector>
 #include "VM/Memory.h"
 #include "Instruction.h"
@@ -27,15 +26,14 @@ namespace cpu {
     private:
         /* Private members */
         vm::Memory *vMemory;
-        CpuState *cpuState;
-        Instruction *instruction = 0; //TODO delele Instruction
+        CpuState cpuState;
         std::vector<cpu::InstructionFunctor *> instructionFunctors;
 
         /* Private Functions*/
         void fetch();
-        void decode();
+        void decode(Instruction * instruction);
         void incrementIP();
-        void execute();
+        void execute(Instruction * instruction);
         void initFunctors(std::vector<cpu::InstructionFunctor*> &_instructionFunctors);
     };
 }

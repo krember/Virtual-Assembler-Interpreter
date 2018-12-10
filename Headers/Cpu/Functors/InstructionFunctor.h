@@ -6,7 +6,11 @@
 #define VIRTUAL_MACHINE_INSTRUCTIONFUNCTOR_H
 
 #include <cstdint>
-#include "Cpu/CpuState.h"
+#include <Cpu/Instruction.h>
+
+namespace cpu {
+struct CpuState;
+}
 
 namespace cpu {
     class InstructionFunctor {
@@ -16,8 +20,7 @@ namespace cpu {
     public:
         explicit InstructionFunctor(cpu::CpuState * _state);
 
-        virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                                uint8_t register1, uint8_t register2, uint32_t literal) = 0;
+        virtual void operator()(Instruction & instruction) = 0;
     };
 }
 

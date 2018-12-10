@@ -4,9 +4,11 @@
 
 #include <vector>
 #include "Cpu/Instruction.h"
-#include "BinaryUtils.h"
 
-cpu::Instruction::Instruction(uint64_t instructionCode) {
+cpu::Instruction::Instruction() {
+}
+
+void cpu::Instruction::init(uint64_t instructionCode) {
     uint8_t * bytes = reinterpret_cast<uint8_t *>(&instructionCode);
 
     opCode = bytes[0];

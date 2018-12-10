@@ -15,8 +15,7 @@ namespace cpu {
     public:
         AssignFunctor(cpu::CpuState *state);
 
-        virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                                uint8_t register1, uint8_t register2, uint32_t literal);
+        virtual void operator()(Instruction & instruction);
 
         void execute(uint8_t dataSize, uint8_t register1, uint32_t literal);
 

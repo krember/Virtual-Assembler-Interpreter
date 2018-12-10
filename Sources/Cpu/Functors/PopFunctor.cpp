@@ -2,13 +2,15 @@
 // Created by Narek Hovhannisyan and/or Milena Mamyan.
 //
 
+#include "Cpu/Functors/PopFunctor.h"
 #include <Config/CPUConstants.h>
 #include <Exceptions/ExecutionException.h>
-#include "Cpu/Functors/IncFunctor.h"
 
-cpu::IncFunctor::IncFunctor(cpu::CpuState *_cpuState) : InstructionFunctor(_cpuState) {}
+cpu::PopFunctor::PopFunctor(cpu::CpuState *_cpuState, vm::Memory *memory) : InstructionFunctor(_cpuState), vMemory(memory) {
 
-void cpu::IncFunctor::operator()(Instruction & instruction) {
+}
+
+void cpu::PopFunctor::operator()(Instruction & instruction) {
     switch (instruction.getRegistersOrder()) {
         case RegisterOrder::AA:
         case RegisterOrder::AR:
@@ -22,7 +24,7 @@ void cpu::IncFunctor::operator()(Instruction & instruction) {
     }
 }
 
-void cpu::IncFunctor::execute(uint8_t dataSize, uint8_t register1) {
+void cpu::PopFunctor::execute(uint8_t dataSize, uint8_t register1) {
     switch (dataSize) {
         case DataSize::B:
             executeOp<uint8_t>(register1);

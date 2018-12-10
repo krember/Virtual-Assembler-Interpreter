@@ -26,7 +26,9 @@ namespace cpu {
 
     public:
         /* Constructing */
-        Instruction(uint64_t instructionCode);
+        Instruction();
+
+        void init(uint64_t instructionCode);
 
         /* Public interface */
         uint8_t getOpCode();

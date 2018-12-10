@@ -7,6 +7,8 @@
 
 
 #include <cstdint>
+#include <Config/CPUConstants.h>
+
 namespace cpu {
     class Flags {
     private:
@@ -18,24 +20,23 @@ namespace cpu {
             OVERFLOW = 0x0001 << 11
         };
     
-        uint16_t flags; //TODO : make flags uint64_t or change in the Functors
+        uint16_t flags;
         
     public:
         Flags(uint16_t val = 0);
     
-        bool getCarry();
-        bool getZero();
-        bool getSign();
-        bool getOverflow();
-        uint16_t getFlags(); // TODO: NOTE: Modified shitty
-    
+        bool getCarry() const;
+        bool getZero() const;
+        bool getSign() const;
+        bool getOverflow() const;
+
         void setCarry(bool carry );
         void setZero(bool zero);
         void setSign(bool negative);
         void setOverflow(bool overflow);
         void setFlags(uint16_t newValue); // TODO: NOTE: Modified shitty
 
-        //TODO: JE here from shitty
+        bool checkCondition(JumpCondition condition) const;
     };
 }
 

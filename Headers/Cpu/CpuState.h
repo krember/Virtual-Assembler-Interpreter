@@ -2,20 +2,23 @@
 #ifndef VIRTUAL_MACHINE_CPUSTATE_H
 #define VIRTUAL_MACHINE_CPUSTATE_H
 
-#include <cstdint>
 #include <vector>
 #include <iostream>
 #include "Flags.h"
 
 namespace cpu {
     struct CpuState {
+    public:
         uint32_t ip;
+        uint32_t sf;
+        uint32_t sp;
         uint64_t ir;
+        uint8_t bdr;
         std::vector <uint8_t> generalPurposeRegisters; // R_something
         std::vector <uint32_t> addressRegisters; // A_something
         Flags flags;
 
-        CpuState() : ip(0), ir(0), generalPurposeRegisters(64), addressRegisters(16) {
+        CpuState() : ip(0), ir(0), sf(0), sp(0), bdr(0), generalPurposeRegisters(64), addressRegisters(16) {
             generalPurposeRegisters[0] = 1;
             generalPurposeRegisters[1] = 2;
             generalPurposeRegisters[2] = 3;
@@ -32,33 +35,24 @@ namespace cpu {
             addressRegisters[5] = 2;
             addressRegisters[6] = 3;
             addressRegisters[7] = 4;
-
         }; //TODO for test reasons
 
-        CpuState(uint32_t ip, uint64_t ir,
+        CpuState(uint32_t ip, uint64_t ir, uint32_t sf, uint32_t sp,
                  std::vector <uint8_t> generalPurposeRegisters, std::vector <uint32_t> addressRegisters);
 
         template <typename valueType>
-        valueType readFromDataRegister(uint32_t address);
+        valueType readFromDataRegister(uint8_t address);
 
         template <typename valueType>
         void writeToDataRegisters(uint8_t address, valueType data);
 
         template <typename valueType>
-        valueType readFromAddressRegister(uint32_t address);
+        valueType readFromAddressRegister(uint8_t address);
 
         template <typename valueType>
         void writeToAddressRegisters(uint8_t address, valueType data);
 
-        uint32_t getIp();
-
-        void setIp(uint32_t ip);
-
-        uint64_t getIr();
-
-        void setIr(uint64_t ir);
-
-        Flags &getFlags();
+        const Flags &getFlags();
 
         void setFlags(Flags &_flags);
         void setFlags(uint16_t _value);
@@ -66,7 +60,7 @@ namespace cpu {
 }
 
 template<typename valueType>
-valueType cpu::CpuState::readFromDataRegister(uint32_t address) {
+valueType cpu::CpuState::readFromDataRegister(uint8_t address) {
     return *reinterpret_cast<valueType *>(&generalPurposeRegisters[0] + address);
 }
 
@@ -77,7 +71,7 @@ void cpu::CpuState::writeToDataRegisters(uint8_t address, valueType data) {
 }
 
 template<typename valueType>
-valueType cpu::CpuState::readFromAddressRegister(uint32_t address) {
+valueType cpu::CpuState::readFromAddressRegister(uint8_t address) {
     return *reinterpret_cast<valueType *>(&addressRegisters[0] + address);
 }
 

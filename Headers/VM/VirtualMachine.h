@@ -8,8 +8,8 @@
 #include <string>
 #include "Cpu/CPU.h"
 #include "VM/Memory.h"
-#include "StructuredFile.h"
 #include "VM/FileLoader.h"
+#include "Debugger.h"
 
 namespace vm {
     class VirtualMachine {
@@ -18,12 +18,15 @@ namespace vm {
         Memory *vMemory;
         cpu::CPU *vCpu;
         FileLoader *vFileLoader;
+        Debugger *vdb;
 
     public:
         /* Public interface */
         VirtualMachine();
 
+        void initialize();
         void execute(std::string fileName);  // Executes content of the given file (executable)
+        void debug(std::string fileName);  // Executes content of the given file (executable)
     };
 }
 

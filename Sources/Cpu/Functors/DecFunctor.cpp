@@ -8,18 +8,17 @@
 
 cpu::DecFunctor::DecFunctor(cpu::CpuState *_cpuState) : InstructionFunctor(_cpuState) {}
 
-void cpu::DecFunctor::operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder, uint8_t register1,
-                                 uint8_t register2, uint32_t literal) {
-    switch (registersOrder) {
+void cpu::DecFunctor::operator()(Instruction & instruction) {
+    switch (instruction.getRegistersOrder()) {
         case RegisterOrder::AA:
         case RegisterOrder::AR:
         case RegisterOrder::RA:
             throw ExecutionException("No suitable operation found for given data types.");
         case RegisterOrder::RR:
-            execute(dataSize, register1);
+            execute(instruction.getDataSize(), instruction.getRegister1());
             break;
         default:
-            throw ExecutionException("Unrecognized register types found - " + registersOrder);
+            throw ExecutionException("Unrecognized register types found - " + std::to_string(instruction.getRegistersOrder()));
     }
 }
 
@@ -38,7 +37,7 @@ void cpu::DecFunctor::execute(uint8_t dataSize, uint8_t register1) {
             executeOp<uint64_t>(register1);
             break;
         default:
-            throw ExecutionException("Unrecognized data size found - " + dataSize);
+            throw ExecutionException("Unrecognized data size found - " + std::to_string(dataSize));
     }
 }
 

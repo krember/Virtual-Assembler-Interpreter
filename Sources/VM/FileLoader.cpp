@@ -22,7 +22,7 @@ void FileLoader::load(std::string fileName) {
     exe.read(reinterpret_cast<char *>(&symbolTableOffset), sizeof(symbolTableOffset));
     exe.read(reinterpret_cast<char *>(&dataSectionOffset), sizeof(dataSectionOffset));
     exe.read(reinterpret_cast<char *>(&codeSectionOffset), sizeof(codeSectionOffset));
-    codeSectionOffset = 12;
+//    codeSectionOffset = 12;  TODO uncomment this as .exe file is malformed
 
     // TODO Chage exe file structure
     uint64_t command;

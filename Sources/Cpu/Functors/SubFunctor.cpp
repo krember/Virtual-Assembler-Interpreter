@@ -19,6 +19,6 @@ void cpu::SubFunctor::execute(uint8_t dataSize, uint8_t register1, uint8_t regis
             executeOp<uint64_t>(register1, register2);
             break;
         default:
-            throw ExecutionException("Unrecognized data size found - " + dataSize);
+            throw ExecutionException("Unrecognized data size found - " + std::to_string(dataSize));
     }
 }

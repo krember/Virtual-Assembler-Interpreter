@@ -13,8 +13,7 @@ namespace cpu {
     public:
         IncFunctor(CpuState *state);
 
-        virtual void operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                                uint8_t register1, uint8_t register2, uint32_t literal);
+        virtual void operator()(Instruction & instruction);
 
         void execute(uint8_t dataSize, uint8_t register1);
 
@@ -25,7 +24,7 @@ namespace cpu {
 
 template<typename T>
 void cpu::IncFunctor::executeOp(uint8_t _register) {
-    uint16_t flag = 0;
+    uint64_t flag = 0;
 
     T val = cpuState->readFromDataRegister<T>(_register) + 1;
     __asm ("pushf    \n\t"

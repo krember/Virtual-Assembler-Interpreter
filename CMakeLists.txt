@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(Headers)
 
 add_executable(Virtual_Machine
-        Headers/BinaryUtils.h
         Headers/Cpu/CPU.h
         Headers/Exceptions/Exception.h
         Headers/VM/FileLoader.h
@@ -14,15 +13,12 @@ add_executable(Virtual_Machine
         Headers/Exceptions/IOException.h
         Headers/Config/LanguageConstants.h
         Headers/VM/Memory.h
-        Headers/StructuredFile.h
         Headers/VM/VirtualMachine.h
-        Sources/BinaryUtils.cpp
         Sources/Cpu/CPU.cpp
         Sources/Exceptions/Exception.cpp
         Sources/VM/FileLoader.cpp
         Sources/Cpu/Instruction.cpp
         Sources/Exceptions/IOException.cpp
-        Sources/StructuredFile.cpp
         Sources/VM/VirtualMachine.cpp
         main.cpp Headers/Config/CPUConstants.h
         Headers/Cpu/Functors/InstructionFunctor.h
@@ -48,4 +44,4 @@ add_executable(Virtual_Machine
         Sources/Cpu/Functors/DecFunctor.cpp Headers/Cpu/Functors/DecFunctor.h
         Sources/Cpu/Functors/AssignFunctor.cpp Headers/Cpu/Functors/AssignFunctor.h
         Sources/Cpu/Functors/NopFunctor.cpp Headers/Cpu/Functors/NopFunctor.h
-        Sources/Cpu/Functors/IncFunctor.cpp Headers/Cpu/Functors/IncFunctor.h Sources/VM/Debugger.cpp Headers/VM/Debugger.h Sources/Cpu/Functors/MovFunctor.cpp Headers/Cpu/Functors/MovFunctor.h Sources/Cpu/Functors/SwapFunctor.cpp Headers/Cpu/Functors/SwapFunctor.h Sources/Cpu/Functors/AndFunctor.cpp Headers/Cpu/Functors/AndFunctor.h Sources/Cpu/Functors/OrFunctor.cpp Headers/Cpu/Functors/OrFunctor.h Sources/Cpu/Functors/BinaryRegisterwiseFunctor.cpp Headers/Cpu/Functors/BinaryRegisterwiseFunctor.h Sources/Cpu/Functors/InstructionFunctor.cpp Sources/Cpu/Functors/XorFunctor.cpp Headers/Cpu/Functors/XorFunctor.h Sources/Cpu/Functors/NandFunctor.cpp Headers/Cpu/Functors/NandFunctor.h Sources/Cpu/Functors/NorFunctor.cpp Headers/Cpu/Functors/NorFunctor.h Sources/Cpu/Functors/NotFunctor.cpp Headers/Cpu/Functors/NotFunctor.h)
+        Sources/Cpu/Functors/IncFunctor.cpp Headers/Cpu/Functors/IncFunctor.h Sources/VM/Debugger.cpp Headers/VM/Debugger.h Sources/Cpu/Functors/MovFunctor.cpp Headers/Cpu/Functors/MovFunctor.h Sources/Cpu/Functors/SwapFunctor.cpp Headers/Cpu/Functors/SwapFunctor.h Sources/Cpu/Functors/AndFunctor.cpp Headers/Cpu/Functors/AndFunctor.h Sources/Cpu/Functors/OrFunctor.cpp Headers/Cpu/Functors/OrFunctor.h Sources/Cpu/Functors/BinaryRegisterwiseFunctor.cpp Headers/Cpu/Functors/BinaryRegisterwiseFunctor.h Sources/Cpu/Functors/InstructionFunctor.cpp Sources/Cpu/Functors/XorFunctor.cpp Headers/Cpu/Functors/XorFunctor.h Sources/Cpu/Functors/NandFunctor.cpp Headers/Cpu/Functors/NandFunctor.h Sources/Cpu/Functors/NorFunctor.cpp Headers/Cpu/Functors/NorFunctor.h Sources/Cpu/Functors/NotFunctor.cpp Headers/Cpu/Functors/NotFunctor.h Sources/Cpu/Functors/PushFunctor.cpp Headers/Cpu/Functors/PushFunctor.h Sources/Cpu/Functors/PopFunctor.cpp Headers/Cpu/Functors/PopFunctor.h Sources/Cpu/Functors/CallAddressFunctor.cpp Headers/Cpu/Functors/CallAddressFunctor.h Sources/Cpu/Functors/BreakFunctor.cpp Headers/Cpu/Functors/BreakFunctor.h)

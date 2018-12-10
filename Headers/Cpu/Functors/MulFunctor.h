@@ -25,7 +25,7 @@ namespace cpu {
 
 template<typename T>
 void cpu::MulFunctor::executeOp(uint8_t register1, uint8_t register2) {
-    uint16_t flag = 0;
+    uint64_t flag = 0;
 
     T val = cpuState->readFromDataRegister<T>(register1) * cpuState->readFromDataRegister<T>(register2);
     __asm ("pushf    \n\t"

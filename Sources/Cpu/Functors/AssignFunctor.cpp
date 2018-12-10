@@ -9,18 +9,17 @@
 
 cpu::AssignFunctor::AssignFunctor(cpu::CpuState *_cpuState) : InstructionFunctor(_cpuState) {}
 
-void cpu::AssignFunctor::operator()(uint8_t jumpExtension, uint8_t dataSize, uint8_t registersOrder,
-                                 uint8_t register1, uint8_t register2, uint32_t literal) {
-    switch (registersOrder) {
+void cpu::AssignFunctor::operator()(Instruction & instruction) {
+    switch (instruction.getRegistersOrder()) {
         case RegisterOrder::AA:
         case RegisterOrder::AR:
             throw ExecutionException("No suitable operation found for given data types.");
         case RegisterOrder::RA:
         case RegisterOrder::RR:
-            execute(dataSize, register1, literal);
+            execute(instruction.getDataSize(), instruction.getRegister1(), instruction.getLiteral());
             break;
         default:
-            throw ExecutionException("Unrecognized register types found - " + registersOrder);
+            throw ExecutionException("Unrecognized register types found - " + std::to_string(instruction.getRegistersOrder()));
     }
 }
 
@@ -39,7 +38,7 @@ void cpu::AssignFunctor::execute(uint8_t dataSize, uint8_t register1, uint32_t l
             executeOp<uint64_t>(register1, literal);
             break;
         default:
-            throw ExecutionException("Unrecognized data size found - " + dataSize);
+            throw ExecutionException("Unrecognized data size found - " + std::to_string(dataSize));
     }
 }
 

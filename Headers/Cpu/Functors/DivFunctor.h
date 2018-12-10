@@ -25,7 +25,7 @@ namespace cpu {
 
 template<typename T>
 void cpu::DivFunctor::executeOp(uint8_t register1, uint8_t register2) {
-    uint16_t flag = 0;
+    uint64_t flag = 0;
 
     T secondArgument = cpuState->readFromDataRegister<T>(register2);
     T val;

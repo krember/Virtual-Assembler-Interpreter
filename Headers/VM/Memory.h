@@ -5,12 +5,14 @@
 #ifndef VIRTUAL_MACHINE_MEMORY_H
 #define VIRTUAL_MACHINE_MEMORY_H
 
-#include "StructuredFile.h"
+#include <vector>
 
 namespace vm {
     class Memory {
     private:
         std::vector<uint8_t> data;
+        size_t memorySize;
+        size_t stackSize;
     public:
         Memory(size_t memorySize, size_t stackSize);
 
@@ -19,6 +21,9 @@ namespace vm {
 
         template<typename valueType>
         void write(uint32_t address, valueType data);
+
+        size_t getMemorySize() const;
+        size_t getStackSize() const;
     };
 
     template<typename valueType>

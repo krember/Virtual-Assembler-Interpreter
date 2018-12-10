@@ -2,13 +2,15 @@
 // Created by Narek Hovhannisyan and/or Milena Mamyan.
 //
 
+#include "Cpu/Functors/PushFunctor.h"
 #include <Config/CPUConstants.h>
 #include <Exceptions/ExecutionException.h>
-#include "Cpu/Functors/IncFunctor.h"
 
-cpu::IncFunctor::IncFunctor(cpu::CpuState *_cpuState) : InstructionFunctor(_cpuState) {}
+cpu::PushFunctor::PushFunctor(cpu::CpuState *_cpuState, vm::Memory *memory) : InstructionFunctor(_cpuState), vMemory(memory) {
 
-void cpu::IncFunctor::operator()(Instruction & instruction) {
+}
+
+void cpu::PushFunctor::operator()(Instruction & instruction) {
     switch (instruction.getRegistersOrder()) {
         case RegisterOrder::AA:
         case RegisterOrder::AR:
@@ -18,11 +20,11 @@ void cpu::IncFunctor::operator()(Instruction & instruction) {
             execute(instruction.getDataSize(), instruction.getRegister1());
             break;
         default:
-            throw ExecutionException("Unrecognized register types found - " + std::to_string(instruction.getRegistersOrder()));
+            throw ExecutionException("Unrecognized register types found - " + instruction.getRegistersOrder());
     }
 }
 
-void cpu::IncFunctor::execute(uint8_t dataSize, uint8_t register1) {
+void cpu::PushFunctor::execute(uint8_t dataSize, uint8_t register1) {
     switch (dataSize) {
         case DataSize::B:
             executeOp<uint8_t>(register1);
@@ -37,6 +39,6 @@ void cpu::IncFunctor::execute(uint8_t dataSize, uint8_t register1) {
             executeOp<uint64_t>(register1);
             break;
         default:
-            throw ExecutionException("Unrecognized data size found - " + std::to_string(dataSize));
+            throw ExecutionException("Unrecognized data size found - " + dataSize);
     }
 }
