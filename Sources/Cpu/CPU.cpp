@@ -25,10 +25,10 @@
 
 #include "Cpu/CPU.h"
 
-cpu::CPU::CPU(vm::Memory *_memory) :
+cpu::CPU::CPU(vm::Memory *_memory, uint32_t _memorySize, uint32_t _stackSize) :
         vMemory(_memory),
-        cpuState(0, 0, vm::DEFAULT_MEMORY_SIZE, vm::DEFAULT_MEMORY_SIZE, std::vector<uint8_t>(DATA_REGISTERS_COUNT,0),
-                 std::vector<uint32_t>(ADDRESS_REGISTERS_COUNT,0)){
+        cpuState(0, 0, _memorySize, _stackSize, _memorySize, _stackSize, std::vector<uint8_t>(DATA_REGISTERS_COUNT,0),
+                 std::vector<uint32_t>(ADDRESS_REGISTERS_COUNT,0)) {
     initFunctors(instructionFunctors);
 }
 
@@ -65,10 +65,10 @@ void cpu::CPU::execute(Instruction * instruction) {
     (*functor)(*instruction);
 }
 
+
 void cpu::CPU::incrementIP() {
     cpuState.ip += cpu::COMMAND_SIZE;
 }
-
 
 const cpu::CpuState& cpu::CPU::state() const {
     return cpuState;
@@ -94,4 +94,8 @@ void cpu::CPU::step() {
     incrementIP();
     execute(instruction);
     delete instruction;
+}
+
+void cpu::CPU::setIp(uint32_t _ip) {
+    cpuState.ip = _ip;
 }

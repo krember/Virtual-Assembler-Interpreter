@@ -31,6 +31,6 @@ int main() {
 //    functor(1,0,3,0,0,1);
 
     vm::VirtualMachine *vm = new vm::VirtualMachine();
-    vm -> debug("inputMac.exe");
+    vm -> debug("inputCompiler.exe");
     return 0;
 }

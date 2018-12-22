@@ -15,11 +15,12 @@ namespace cpu {
     class CPU {
     public:
         /* Constructing */
-        explicit CPU(vm::Memory *_memory);
+        explicit CPU(vm::Memory *_memory, uint32_t _memorySize, uint32_t _stackSize);
 
         /* Public interface */
         const CpuState& state() const;
 
+        void setIp(uint32_t _ip);
         void run();
         void step();
 

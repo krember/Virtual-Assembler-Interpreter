@@ -8,7 +8,7 @@
 #include "Cpu/Instruction.h"
 
 vm::VirtualMachine::VirtualMachine() : vMemory(new vm::Memory(vm::DEFAULT_MEMORY_SIZE, vm::DEFAULT_STACK_SIZE)),
-                                       vCpu(new cpu::CPU(vMemory)),
+                                       vCpu(new cpu::CPU(vMemory, vm::DEFAULT_MEMORY_SIZE, vm::DEFAULT_STACK_SIZE)),
                                        vFileLoader(new FileLoader(vMemory)),
                                        vdb(new Debugger(vCpu, vMemory)) {
     initialize();
@@ -18,21 +18,26 @@ void vm::VirtualMachine::initialize() {
 }
 
 void vm::VirtualMachine::execute(std::string fileName) {
+    try {
+        auto result = vFileLoader->load(fileName);
+        vCpu->setIp(result.first);
 
-    // TODO May be needed to wrap in try-catch
-    vFileLoader->load(fileName);
-
-    vCpu->run();
+        vCpu->run();
+    } catch (Exception & e) {
+        //TODO: Handle
+    }
 }
 
 void vm::VirtualMachine::debug(std::string fileName) {
     try {
-        vFileLoader->load(fileName);
+        auto result = vFileLoader->load(fileName);
+        vCpu->setIp(result.first);
 
         std::cout << vdb->nextCommand() << std::endl;
         vdb->stepIn();
         std::cout << vdb->nextCommand() << std::endl;
     } catch (Exception &e) {
+        //TODO: Handle (Should not cout)
         std::cout << e.getMessage() << std::endl;
     }
 }

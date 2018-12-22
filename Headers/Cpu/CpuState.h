@@ -14,9 +14,11 @@ namespace cpu {
         uint32_t sp;
         uint64_t ir;
         uint8_t bdr;
-        std::vector <uint8_t> generalPurposeRegisters; // R_something
-        std::vector <uint32_t> addressRegisters; // A_something
+        std::vector<uint8_t> generalPurposeRegisters; // R_something
+        std::vector<uint32_t> addressRegisters; // A_something
         Flags flags;
+        uint32_t memorySize;
+        uint32_t stackSize;
 
         CpuState() : ip(0), ir(0), sf(0), sp(0), bdr(0), generalPurposeRegisters(64), addressRegisters(16) {
             generalPurposeRegisters[0] = 1;
@@ -37,19 +39,19 @@ namespace cpu {
             addressRegisters[7] = 4;
         }; //TODO for test reasons
 
-        CpuState(uint32_t ip, uint64_t ir, uint32_t sf, uint32_t sp,
-                 std::vector <uint8_t> generalPurposeRegisters, std::vector <uint32_t> addressRegisters);
+        CpuState(uint32_t ip, uint64_t ir, uint32_t sf, uint32_t sp, uint32_t _memorySize, uint32_t _stackSize,
+                 std::vector<uint8_t> generalPurposeRegisters, std::vector<uint32_t> addressRegisters);
 
-        template <typename valueType>
+        template<typename valueType>
         valueType readFromDataRegister(uint8_t address);
 
-        template <typename valueType>
+        template<typename valueType>
         void writeToDataRegisters(uint8_t address, valueType data);
 
-        template <typename valueType>
+        template<typename valueType>
         valueType readFromAddressRegister(uint8_t address);
 
-        template <typename valueType>
+        template<typename valueType>
         void writeToAddressRegisters(uint8_t address, valueType data);
 
         const Flags &getFlags();

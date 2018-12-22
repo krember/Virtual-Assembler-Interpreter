@@ -8,72 +8,60 @@ FileLoader::FileLoader(vm::Memory *_memory) : vMemory(_memory) {
 
 }
 
-void FileLoader::load(std::string fileName) {
-    std::ifstream exe(fileName, std::ios::binary);
-    if (!exe.is_open()) {
+std::pair<uint32_t, SymbolTable> FileLoader::load(std::string fileName) {
+    FILE * file = std::fopen(fileName.c_str(), "rb");
+    if(file == nullptr) {
         throw IOException("Could not open file with name : " + fileName);
     }
-
-    uint32_t address = 0;
-
     uint32_t symbolTableOffset;
     uint32_t dataSectionOffset;
     uint32_t codeSectionOffset;
-    exe.read(reinterpret_cast<char *>(&symbolTableOffset), sizeof(symbolTableOffset));
-    exe.read(reinterpret_cast<char *>(&dataSectionOffset), sizeof(dataSectionOffset));
-    exe.read(reinterpret_cast<char *>(&codeSectionOffset), sizeof(codeSectionOffset));
-//    codeSectionOffset = 12;  TODO uncomment this as .exe file is malformed
+    uint32_t reallocationTableOffset;
+    std::fread(&symbolTableOffset, sizeof(uint32_t), 1, file);
+    std::fread(&dataSectionOffset, sizeof(uint32_t), 1, file);
+    std::fread(&codeSectionOffset, sizeof(uint32_t), 1, file);
+    std::fread(&reallocationTableOffset, sizeof(uint32_t), 1, file);
 
-    // TODO Chage exe file structure
+    uint32_t address = 16;
+    uint32_t inMemoryAddress = 0;
+    uint32_t codeSectionOffsetInMemory = 0;
+
     uint64_t command;
-    while(exe.read(reinterpret_cast<char *>(&command), sizeof(command))) {
-        if(command == 0)
-            break;
-        vMemory->write<uint64_t>(address, command);
+
+    SymbolTable symbolTable;
+    while(address >= symbolTableOffset && address < dataSectionOffset) {
+        std::string name = readString(file, address);
+        uint32_t offset;
+        std::fread(&offset, sizeof(uint32_t), 1, file);
+        address += 4;
+        symbolTable.add(name, offset);
+    }
+
+    while(address >= dataSectionOffset && address < codeSectionOffset) {
+        std::fread(&command, sizeof(uint64_t), 1, file);  // TODO : This returns "DWORD a 4". Is it right? How should we handle it?
         address += 8;
     }
+
+    while(address >= codeSectionOffset && address < reallocationTableOffset) {
+        std::fread(&command, sizeof(uint64_t), 1, file);
+        vMemory->write<uint64_t>(inMemoryAddress, command);
+        address += 8;
+        inMemoryAddress += 8;
+    }
+    std::fclose(file);
+
+    return std::make_pair(codeSectionOffsetInMemory, symbolTable);
 }
 
-
-
-
-//const ObjectFile & FileLoader::readFile(std::string fileName) {
-//	std::ifstream codeFile(fileName);
-//	if (!codeFile.is_open()) {
-//		throw IOException("Could not open file with name : " + fileName);
-//	}
-//	std::string line;
-//	while (getline(codeFile, line)) {
-//		if (line[0] == '\n' || line[0] == '\0' || line[0] == '\n\r') {
-//			continue;
-//		}
-//		else if (line[0] == ' ' || line[0] == '\t') {
-//			line.erase(0, line.find_first_not_of(' \t\n\r') - 1);
-//		}
-//		line.erase(line.find_last_not_of(' \t\n\r') + 1);
-//		if (line.compare(CODE) != 0){
-//			throw IOException("Not an executable file");
-//		}
-//		else {
-//			break;
-//		}
-//	}
-//
-//	ObjectFile structedFile;
-//	while (getline(codeFile, line)) {
-//		if (line[0] == '\n' || line[0] == '\0' || line[0] == '\n\r') {
-//			continue;
-//		}
-//		if (line[0] == ' ' || line[0] == '\t') {
-//			line.erase(0, line.find_first_not_of(' \t\n\r') - 1);
-//		}
-//		line.erase(line.find_last_not_of(' \t\n\r') + 1);
-//
-//		if (!line.empty()) {
-//			structedFile.addOperation(line);
-//		}
-//	}
-//
-//	return structedFile;
-//}
-
+std::string FileLoader::readString(FILE *file, uint32_t &address) {
+    if (file == nullptr)
+        throw IOException("Cannot connect to input file");
+    std::string result;
+    unsigned char ch;
+    while ((ch = std::fgetc(file)) != EOF  && ch != '\0') {
+        result += ch;
+        address += 1;
+    }
+    address += 1;
+    return result;
+}

@@ -16,11 +16,12 @@ class FileLoader {
 private:
 	vm::Memory * vMemory;
 
+	std::string readString(FILE * file, uint32_t& address);
 public:
     FileLoader(vm::Memory *_memory);
 
     // Loads contents of the given file to the memory.
-    void load(std::string fileName);
+    std::pair<uint32_t, SymbolTable> load(std::string fileName);
 };
 
 #endif //VIRTUAL_MACHINE_LOADER_H

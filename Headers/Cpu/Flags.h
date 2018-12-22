@@ -34,7 +34,7 @@ namespace cpu {
         void setZero(bool zero);
         void setSign(bool negative);
         void setOverflow(bool overflow);
-        void setFlags(uint16_t newValue); // TODO: NOTE: Modified shitty
+        void setFlags(uint16_t newValue);
 
         bool checkCondition(JumpCondition condition) const;
     };
