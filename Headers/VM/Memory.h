@@ -6,6 +6,7 @@
 #define VIRTUAL_MACHINE_MEMORY_H
 
 #include <vector>
+#include <cstdint>
 
 namespace vm {
     class Memory {

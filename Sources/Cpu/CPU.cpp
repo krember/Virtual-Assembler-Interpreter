@@ -66,8 +66,8 @@ void cpu::CPU::fetch() {
     cpuState.ir = vMemory->read<uint64_t>(cpuState.ip);
 }
 
-void cpu::CPU::decode(Instruction * intsruction) {
-    intsruction->init(cpuState.ir);
+void cpu::CPU::decode(Instruction * instruction) {
+    instruction->init(cpuState.ir);
 }
 
 void cpu::CPU::execute(Instruction * instruction) {

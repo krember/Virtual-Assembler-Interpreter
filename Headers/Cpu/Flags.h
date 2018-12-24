@@ -24,12 +24,13 @@ namespace cpu {
         
     public:
         Flags(uint16_t val = 0);
-    
+
         bool getCarry() const;
         bool getZero() const;
         bool getSign() const;
         bool getOverflow() const;
-
+        uint16_t getFlags(); // TODO: NOTE: Modified shitty
+    
         void setCarry(bool carry );
         void setZero(bool zero);
         void setSign(bool negative);

@@ -4,7 +4,7 @@
 
 #include "Cpu/Flags.h"
 
-cpu::Flags::Flags(uint16_t  val)
+cpu::Flags::Flags(uint16_t val)
         : flags(val) {
 }
 

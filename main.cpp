@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "VM/VirtualMachine.h"
 
 int main() {
@@ -30,7 +31,8 @@ int main() {
 //
 //    functor(1,0,3,0,0,1);
 
-//    vm::VirtualMachine *vm = new vm::VirtualMachine();
-//    vm -> debug("inputCompiler.exe");
+    vm::VirtualMachine *vm = new vm::VirtualMachine();
+    vm -> debug("inputCompiler.exe");
+
     return 0;
 }

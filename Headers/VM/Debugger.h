@@ -16,7 +16,7 @@ namespace vm {
         Debugger(cpu::CPU * vCPU, vm::Memory * vMemory);
 
         void setBreakpoint(uint32_t address);
-        void recoverBreakpoint(uint32_t address);
+        void removeBreakpoint(uint32_t address);
         void stepIn();
         void stepOver();
         void run();

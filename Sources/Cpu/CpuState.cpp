@@ -20,3 +20,10 @@ const cpu::Flags &cpu::CpuState::getFlags() {
     return flags;
 }
 
+uint32_t cpu::CpuState::readFromAddressRegister(uint8_t address) {
+    return addressRegisters.at(address);
+}
+
+void cpu::CpuState::writeToAddressRegisters(uint8_t address, uint32_t data) {
+    addressRegisters.at(address) = data;
+}

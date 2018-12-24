@@ -49,11 +49,9 @@ namespace cpu {
         template<typename valueType>
         void writeToDataRegisters(uint8_t address, valueType data);
 
-        template<typename valueType>
-        valueType readFromAddressRegister(uint8_t address);
+        uint32_t readFromAddressRegister(uint8_t address);
 
-        template<typename valueType>
-        void writeToAddressRegisters(uint8_t address, valueType data);
+        void writeToAddressRegisters(uint8_t address, uint32_t data);
 
         const Flags &getFlags();
 
@@ -98,14 +96,5 @@ void cpu::CpuState::writeToDataRegisters(uint8_t address, valueType data) {
     *reinterpret_cast<valueType *>(&generalPurposeRegisters[0] + address) = data;
 }
 
-template<typename valueType>
-valueType cpu::CpuState::readFromAddressRegister(uint8_t address) {
-    return *reinterpret_cast<valueType *>(&addressRegisters[0] + address);
-}
-
-template<typename valueType>
-void cpu::CpuState::writeToAddressRegisters(uint8_t address, valueType data) {
-    *reinterpret_cast<valueType *>(&addressRegisters[0] + address) = data;
-}
 
 #endif //VIRTUAL_MACHINE_CPUSTATE_H

@@ -21,7 +21,7 @@ void vm::Debugger::stepOver() {
 void vm::Debugger::run() {
     vCpu->run();
     if(vCpu->state().bdr == cpu::BREAK_EXIT_CODE) {
-        recoverBreakpoint(vCpu->state().ip - cpu::COMMAND_SIZE);
+        removeBreakpoint(vCpu->state().ip - cpu::COMMAND_SIZE);
     }
 }
 
@@ -38,7 +38,7 @@ void vm::Debugger::setBreakpoint(uint32_t address) {
     vMemory->write(address, BREAKPOINT_INSTRUCTION);
 }
 
-void vm::Debugger::recoverBreakpoint(uint32_t address) {
+void vm::Debugger::removeBreakpoint(uint32_t address) {
     if(stashedInstructions.find(address) == stashedInstructions.end()) {
         throw ExecutionException("No breakpoints found at location " + std::to_string(address));
     }
