@@ -24,6 +24,11 @@ namespace lang {
         DIV,
         INC,
         DEC,
+        PUSH,
+        POP,
+        CALL,
+        RET,
+        EXIT,
         SIZE_DEFINER = 120
     };
 }

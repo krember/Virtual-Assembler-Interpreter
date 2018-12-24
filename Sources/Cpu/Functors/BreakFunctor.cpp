@@ -9,6 +9,6 @@ cpu::BreakFunctor::BreakFunctor(cpu::CpuState *state) : InstructionFunctor(state
 }
 
 void cpu::BreakFunctor::operator()(Instruction & instruction) {
-    cpuState->bdr = 1;
+    cpuState->bdr = cpu::BREAK_EXIT_CODE;
     cpuState->ip -= COMMAND_SIZE;
 }

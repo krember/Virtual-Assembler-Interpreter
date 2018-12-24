@@ -19,16 +19,8 @@ namespace cpu {
 
         void execute(uint8_t dataSize, uint8_t jumpExtension, uint32_t literal);
 
-        template<typename T>
         void executeOp(uint8_t jumpExtension, uint32_t literal);
     };
-}
-
-template<typename T>
-void cpu::JumpFunctor::executeOp(uint8_t jumpExtension, uint32_t literal) {
-    if (cpuState->getFlags().checkCondition(JumpCondition(jumpExtension))) {
-        cpuState->ip = literal;
-    }
 }
 
 #endif //VIRTUAL_MACHINE_JUMPFUNCTOR_H

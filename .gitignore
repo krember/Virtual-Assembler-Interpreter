@@ -30,7 +30,6 @@
 *.exe
 !input.exe
 !input*.exe
-!input*.exe
 *.out
 *.app
 

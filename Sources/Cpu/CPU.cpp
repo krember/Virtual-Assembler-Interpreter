@@ -22,12 +22,17 @@
 #include <Cpu/Functors/IncFunctor.h>
 #include <Cpu/Functors/DecFunctor.h>
 #include <Config/VMConstants.h>
+#include <Cpu/Functors/PushFunctor.h>
+#include <Cpu/Functors/PopFunctor.h>
+#include <Cpu/Functors/CallAddressFunctor.h>
+#include <Cpu/Functors/RetFunctor.h>
+#include <Cpu/Functors/ExitFunctor.h>
 
 #include "Cpu/CPU.h"
 
 cpu::CPU::CPU(vm::Memory *_memory, uint32_t _memorySize, uint32_t _stackSize) :
         vMemory(_memory),
-        cpuState(0, 0, _memorySize, _stackSize, _memorySize, _stackSize, std::vector<uint8_t>(DATA_REGISTERS_COUNT,0),
+        cpuState(0, 0, _memorySize, _stackSize, _memorySize, _stackSize, std::vector<uint8_t>(DATA_REGISTERS_COUNT, 0),
                  std::vector<uint32_t>(ADDRESS_REGISTERS_COUNT,0)) {
     initFunctors(instructionFunctors);
 }
@@ -50,6 +55,11 @@ void cpu::CPU::initFunctors(std::vector<cpu::InstructionFunctor *> &_instruction
     _instructionFunctors.push_back(new DivFunctor(&cpuState));
     _instructionFunctors.push_back(new IncFunctor(&cpuState));
     _instructionFunctors.push_back(new DecFunctor(&cpuState));
+    _instructionFunctors.push_back(new PushFunctor(&cpuState, vMemory));
+    _instructionFunctors.push_back(new PopFunctor(&cpuState, vMemory));
+    _instructionFunctors.push_back(new CallAddressFunctor(&cpuState, _instructionFunctors.at(lang::Operation::PUSH)));
+    _instructionFunctors.push_back(new RetFunctor(&cpuState, _instructionFunctors.at(lang::Operation::POP)));
+    _instructionFunctors.push_back(new ExitFunctor(&cpuState));
 }
 
 void cpu::CPU::fetch() {

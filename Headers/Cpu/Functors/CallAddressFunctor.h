@@ -13,22 +13,16 @@
 namespace cpu {
     class CallAddressFunctor : public InstructionFunctor {
     public:
-        CallAddressFunctor(cpu::CpuState *state);
+        CallAddressFunctor(cpu::CpuState *state, InstructionFunctor * _pushFunctor);
 
         virtual void operator()(Instruction & instruction);
 
-        void execute(uint8_t dataSize, uint8_t register1);
+        void execute(uint8_t dataSize, uint32_t literal);
 
-        template<typename T>
-        void executeOp(uint8_t register1);
+        void executeOp(uint32_t literal);
     private:
-        PushFunctor pushFunctor;
+        PushFunctor* pushFunctor;
     };
-}
-
-template<typename T>
-void cpu::CallAddressFunctor::executeOp(uint8_t register1) {
-   //TODO TO Do
 }
 
 #endif //VIRTUAL_MACHINE_CALLADDRESSFUNCTOR_H

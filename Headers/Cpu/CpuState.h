@@ -4,6 +4,7 @@
 
 #include <vector>
 #include <iostream>
+#include <Exceptions/ExecutionException.h>
 #include "Flags.h"
 
 namespace cpu {
@@ -63,12 +64,37 @@ namespace cpu {
 
 template<typename valueType>
 valueType cpu::CpuState::readFromDataRegister(uint8_t address) {
+    if(address >= generalPurposeRegisters.size()) {
+        address -= generalPurposeRegisters.size();
+        switch(address == 0) {
+            case 0:
+                return ip;
+            case 1:
+                return sp;
+            case 2:
+                return sf;
+            default:
+                throw ExecutionException("No register exists at address " + std::to_string(address));
+        }
+    }
     return *reinterpret_cast<valueType *>(&generalPurposeRegisters[0] + address);
 }
 
 template<typename valueType>
 void cpu::CpuState::writeToDataRegisters(uint8_t address, valueType data) {
-//    std::cout << generalPurposeRegisters[0] << std::endl;
+    if(address >= generalPurposeRegisters.size()) {
+        address -= generalPurposeRegisters.size();
+        switch(address == 0) {
+            case 0:
+                ip = data;
+            case 1:
+                sp = data;
+            case 2:
+                sf = data;
+            default:
+                throw ExecutionException("No register exists at address " + std::to_string(address));
+        }
+    }
     *reinterpret_cast<valueType *>(&generalPurposeRegisters[0] + address) = data;
 }
 

@@ -24,19 +24,18 @@ void cpu::JumpFunctor::operator()(Instruction & instruction) {
 void cpu::JumpFunctor::execute(uint8_t dataSize, uint8_t jumpExtension,uint32_t literal) {
     switch (dataSize) {
         case DataSize::B:
-            executeOp<uint8_t>(jumpExtension, literal);
-            break;
         case DataSize::W:
-            executeOp<uint16_t>(jumpExtension, literal);
-            break;
         case DataSize::DW:
-            executeOp<uint32_t>(jumpExtension, literal);
-            break;
         case DataSize::QW:
-            executeOp<uint64_t>(jumpExtension, literal);
+            executeOp(jumpExtension, literal);
             break;
         default:
             throw ExecutionException("Unrecognized data size found - " + std::to_string(dataSize));
     }
 }
 
+void cpu::JumpFunctor::executeOp(uint8_t jumpExtension, uint32_t literal) {
+    if (cpuState->getFlags().checkCondition(JumpCondition(jumpExtension))) {
+        cpuState->ip = literal;
+    }
+}
