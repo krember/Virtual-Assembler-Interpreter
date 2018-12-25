@@ -4,6 +4,8 @@
 
 #include <utility>
 #include <Config/VMConstants.h>
+#include <VM/Logging/ConsoleLogger.h>
+#include <VM/Logging/Logging.h>
 #include "VM/VirtualMachine.h"
 #include "Cpu/Instruction.h"
 
@@ -15,6 +17,8 @@ vm::VirtualMachine::VirtualMachine() : vMemory(new vm::Memory(vm::DEFAULT_MEMORY
 }
 
 void vm::VirtualMachine::initialize() {
+    ConsoleLogger* consoleLogger = ConsoleLogger::getInstance();
+    Logging::registerLogger(consoleLogger);
 }
 
 void vm::VirtualMachine::execute(std::string fileName) {

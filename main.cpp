@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cstring>
 #include <VdbCli/VdbCli.h>
+#include <VM/Logging/Logger.h>
+#include <VM/Logging/ConsoleLogger.h>
+#include <VM/Logging/Logging.h>
 #include "VM/VirtualMachine.h"
 
 int main() {
@@ -39,7 +42,7 @@ int main() {
 
     vdbcli.execute("step_in");
     vdbcli.execute("print R0 -s DW");
-    std::cout << std::endl;
+//    std::cout << std::endl;
     vdbcli.execute("step_in");
     vdbcli.execute("print A2 -s DW");
     vdbcli.execute("step_in");
