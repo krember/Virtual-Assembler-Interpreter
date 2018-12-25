@@ -7,7 +7,7 @@
 
 namespace lang {
     enum Operation {
-        NOP = 1,
+        NOP = 0,
         JUMP,
         ASSIGN,
         MOV,
@@ -29,6 +29,9 @@ namespace lang {
         CALL,
         RET,
         EXIT,
+        LOAD,
+        STORE,
+        BREAK = 255,
         SIZE_DEFINER = 120
     };
 }

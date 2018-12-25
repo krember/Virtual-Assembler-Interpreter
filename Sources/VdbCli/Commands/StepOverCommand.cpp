@@ -8,8 +8,8 @@
 StepOverCommand::StepOverCommand(vm::Debugger *debugger) : Command(debugger) {}
 
 void StepOverCommand::execute(CommandWrapper wrappedCommand) {
-    if (wrappedCommand.getVdbCommand() != VDBCommand::STEP_IN) {
-        throw CliException(VDBCommand::STACK_TRACE, wrappedCommand.getVdbCommand());
+    if (wrappedCommand.getVdbCommand() != VDBCommand::STEP_OVER) {
+        throw CliException(VDBCommand::STEP_OVER, wrappedCommand.getVdbCommand());
     }
 
     if (!wrappedCommand.getArguments().empty()) {

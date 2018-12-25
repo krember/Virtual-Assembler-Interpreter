@@ -9,8 +9,8 @@
 
 class PrintRegisterCommand: public Command {
 public:
-    PrintRegisterCommand(vm::Debugger* debugger);
-    void execute(CommandWrapper wrappedCommand);
+    explicit PrintRegisterCommand(vm::Debugger* debugger);
+    void execute(CommandWrapper wrappedCommand) override;
 };
 
 

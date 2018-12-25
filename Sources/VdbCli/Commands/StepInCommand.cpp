@@ -9,7 +9,7 @@ StepInCommand::StepInCommand(vm::Debugger *debugger) : Command(debugger) {}
 
 void StepInCommand::execute(CommandWrapper wrappedCommand) {
     if (wrappedCommand.getVdbCommand() != VDBCommand::STEP_IN) {
-        throw CliException(VDBCommand::STACK_TRACE, wrappedCommand.getVdbCommand());
+        throw CliException(VDBCommand::STEP_IN, wrappedCommand.getVdbCommand());
     }
 
     if (!wrappedCommand.getArguments().empty()) {

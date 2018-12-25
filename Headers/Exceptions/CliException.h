@@ -5,7 +5,7 @@
 #ifndef VIRTUAL_MACHINE_CLIEXCEPTION_H
 #define VIRTUAL_MACHINE_CLIEXCEPTION_H
 
-#include <VdbCli/Commands.h>
+#include <VdbCli/Definitions.h>
 #include "Exception.h"
 
 class CliException :

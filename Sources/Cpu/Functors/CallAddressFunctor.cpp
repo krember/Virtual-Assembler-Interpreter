@@ -9,7 +9,7 @@
 cpu::CallAddressFunctor::CallAddressFunctor(cpu::CpuState *_cpuState, InstructionFunctor * _pushFunctor) : InstructionFunctor(_cpuState) {
     PushFunctor * _push = dynamic_cast<PushFunctor*>(_pushFunctor);
     if(_push == nullptr) {
-        throw ExecutionException("Cannot initialize call instruction withour push instruction");
+        throw ExecutionException("Cannot initialize call instruction without push instruction");
     }
     pushFunctor = _push;
 }

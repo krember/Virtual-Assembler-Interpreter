@@ -5,8 +5,8 @@
 #ifndef VIRTUAL_MACHINE_COMMANDS_H
 #define VIRTUAL_MACHINE_COMMANDS_H
 
-enum VDBCommand{
-    BREAK,
+enum VDBCommand {
+    BREAK = 0,
     R_BREAK,
     STACK_TRACE,
     STEP_IN,

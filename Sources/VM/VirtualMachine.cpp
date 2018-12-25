@@ -33,9 +33,7 @@ void vm::VirtualMachine::debug(std::string fileName) {
         auto result = vFileLoader->load(fileName);
         vCpu->setIp(result.first);
 
-        std::cout << vdb->nextCommand() << std::endl;
-        vdb->stepIn();
-        std::cout << vdb->nextCommand() << std::endl;
+//        vdb->run();
     } catch (Exception &e) {
         //TODO: Handle (Should not cout)
         std::cout << e.getMessage() << std::endl;

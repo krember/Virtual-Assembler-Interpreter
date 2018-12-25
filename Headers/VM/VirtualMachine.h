@@ -18,9 +18,10 @@ namespace vm {
         Memory *vMemory;
         cpu::CPU *vCpu;
         FileLoader *vFileLoader;
-        Debugger *vdb;
 
     public:
+        Debugger *vdb;
+
         /* Public interface */
         VirtualMachine();
 

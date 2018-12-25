@@ -5,8 +5,8 @@
 #include "VdbCli/Commands/CommandWrapper.h"
 
 
-CommandWrapper::CommandWrapper(VDBCommand command, std::vector<std::string> _arguments):
-vdbCommand(command), arguments(_arguments){}
+CommandWrapper::CommandWrapper(VDBCommand command, std::vector<std::string> _arguments) :
+        vdbCommand(command), arguments(_arguments) {}
 
 VDBCommand CommandWrapper::getVdbCommand() const {
     return vdbCommand;

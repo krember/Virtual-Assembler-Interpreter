@@ -6,7 +6,7 @@
 #define VIRTUAL_MACHINE_UTILS_H
 
 #include <string>
-#include "Commands.h"
+#include "Definitions.h"
 
 class Utils{
 public:

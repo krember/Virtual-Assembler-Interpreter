@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <VdbCli/VdbCli.h>
 #include "VM/VirtualMachine.h"
 
 int main() {
@@ -33,6 +34,16 @@ int main() {
 
     vm::VirtualMachine *vm = new vm::VirtualMachine();
     vm -> debug("inputCompiler.exe");
+
+    VdbCli vdbcli(vm->vdb);
+
+    vdbcli.execute("step_in");
+    vdbcli.execute("print R0 -s DW");
+    std::cout << std::endl;
+    vdbcli.execute("step_in");
+    vdbcli.execute("print A2 -s DW");
+    vdbcli.execute("step_in");
+    vdbcli.execute("print R0 -s DW");
 
     return 0;
 }

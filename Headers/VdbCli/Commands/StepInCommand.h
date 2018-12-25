@@ -9,8 +9,8 @@
 
 class StepInCommand: public Command {
 public:
-    StepInCommand(vm::Debugger* debugger);
-    void execute(CommandWrapper wrappedCommand);
+    explicit StepInCommand(vm::Debugger* debugger);
+    void execute(CommandWrapper wrappedCommand) override;
 };
 
 

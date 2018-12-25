@@ -11,8 +11,8 @@
 
 class ContinueCommand: public Command {
 public:
-    ContinueCommand(vm::Debugger* debugger);
-    void execute(CommandWrapper wrappedCommand);
+    explicit ContinueCommand(vm::Debugger* debugger);
+    void execute(CommandWrapper wrappedCommand) override;
 };
 
 

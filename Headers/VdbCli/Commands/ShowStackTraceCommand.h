@@ -9,8 +9,8 @@
 
 class ShowStackTraceCommand: public Command {
 public:
-    ShowStackTraceCommand(vm::Debugger* debugger);
-    void execute(CommandWrapper wrappedCommand);
+    explicit ShowStackTraceCommand(vm::Debugger* debugger);
+    void execute(CommandWrapper wrappedCommand) override;
 };
 
 

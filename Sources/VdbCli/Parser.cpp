@@ -8,13 +8,8 @@
 
 CommandWrapper Parser::parse(std::vector<std::string> tokens) {
     VDBCommand vdbCommand = Utils::getCommandFrom(tokens[0]);
-    std::vector<std::string> arguments;
-    if (vdbCommand != VDBCommand::INVALID_COMMAND) {
-        for (int i = 1; i < tokens.size(); ++i) {
-            arguments.push_back(tokens[i]);
-        }
-    }
-    return CommandWrapper(vdbCommand, arguments);
+    tokens.erase(tokens.begin());
+    return CommandWrapper(vdbCommand, tokens);
 }
 
 

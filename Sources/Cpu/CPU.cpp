@@ -27,6 +27,9 @@
 #include <Cpu/Functors/CallAddressFunctor.h>
 #include <Cpu/Functors/RetFunctor.h>
 #include <Cpu/Functors/ExitFunctor.h>
+#include <Cpu/Functors/BreakFunctor.h>
+#include <Cpu/Functors/LoadFunctor.h>
+#include <Cpu/Functors/StoreFunctor.h>
 
 #include "Cpu/CPU.h"
 
@@ -60,6 +63,11 @@ void cpu::CPU::initFunctors(std::vector<cpu::InstructionFunctor *> &_instruction
     _instructionFunctors.push_back(new CallAddressFunctor(&cpuState, _instructionFunctors.at(lang::Operation::PUSH)));
     _instructionFunctors.push_back(new RetFunctor(&cpuState, _instructionFunctors.at(lang::Operation::POP)));
     _instructionFunctors.push_back(new ExitFunctor(&cpuState));
+    _instructionFunctors.push_back(new LoadFunctor(&cpuState, vMemory));
+    _instructionFunctors.push_back(new StoreFunctor(&cpuState, vMemory));
+
+    _instructionFunctors.resize(256);
+    _instructionFunctors.at(255) = new BreakFunctor(&cpuState);
 }
 
 void cpu::CPU::fetch() {

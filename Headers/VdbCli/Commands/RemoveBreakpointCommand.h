@@ -10,8 +10,8 @@
 
 class RemoveBreakpointCommand: public Command {
 public:
-    RemoveBreakpointCommand(vm::Debugger* debugger);
-    void execute(CommandWrapper wrappedCommand);
+    explicit RemoveBreakpointCommand(vm::Debugger* debugger);
+    void execute(CommandWrapper wrappedCommand) override;
 };
 
 

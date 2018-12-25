@@ -8,12 +8,12 @@
 #include <vector>
 #include <string>
 #include <VM/Debugger.h>
-#include "VdbCli/Commands.h"
+#include "VdbCli/Definitions.h"
 #include "CommandWrapper.h"
 
 class Command{
 public:
-    Command(vm::Debugger *debugger) : debugger(debugger) {}
+    explicit Command(vm::Debugger *debugger) : debugger(debugger) {}
 
     virtual void execute(CommandWrapper wrappedCommand) = 0;
 protected:

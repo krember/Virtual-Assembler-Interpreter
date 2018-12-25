@@ -10,8 +10,8 @@
 
 class SetBreakpointCommand: public Command {
 public:
-    SetBreakpointCommand(vm::Debugger* debugger);
-    void execute(CommandWrapper wrappedCommand);
+    explicit SetBreakpointCommand(vm::Debugger* debugger);
+    void execute(CommandWrapper wrappedCommand) override;
 };
 
 

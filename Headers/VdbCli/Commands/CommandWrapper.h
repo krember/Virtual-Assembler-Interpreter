@@ -6,10 +6,10 @@
 #define VIRTUAL_MACHINE_COMMANDWRAPPER_H
 
 
-#include <VdbCli/Commands.h>
+#include <VdbCli/Definitions.h>
 #include <vector>
 #include <string>
-#include <VdbCli/Commands.h>
+#include <VdbCli/Definitions.h>
 
 class CommandWrapper {
 public:

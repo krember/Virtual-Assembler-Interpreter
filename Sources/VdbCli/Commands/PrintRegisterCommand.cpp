@@ -13,7 +13,7 @@ void PrintRegisterCommand::execute(CommandWrapper wrappedCommand) {
     }
 
     std::vector<std::string> arguments = wrappedCommand.getArguments();
-    if (arguments.size() == 1 || arguments.size() == 3) {
+    if (arguments.size() != 1 && arguments.size() != 3) {
         throw CliException("1 or 3", wrappedCommand.getArguments().size());
     }
     std::string firstArgument = arguments[0];
@@ -30,17 +30,26 @@ void PrintRegisterCommand::execute(CommandWrapper wrappedCommand) {
         std::cout << debugger->state().sf;
     } else if (firstArgument[0] == 'A') {
         firstArgument.erase(0, 1);
-        size_t index = std::strtol(firstArgument.c_str(), nullptr,10);
+        long index = std::strtol(firstArgument.c_str(), nullptr,10);
         if (debugger->state().addressRegisters.size() > index) {
             std::cout << debugger->state().readFromAddressRegister(index);
         }
     } else if (firstArgument[0] == 'R') {
         firstArgument.erase(0, 1);
-        size_t index = std::strtol(firstArgument.c_str(), nullptr,10);
-        if (arguments.size() == 1 || arguments[2] == "B") {
+        long index = std::strtol(firstArgument.c_str(), nullptr,10);
+        if (arguments.size() == 1) {
+            std::cout << debugger->state().readFromDataRegister<uint8_t>(index);
+            return;
+        }
+
+        if(arguments[1] != "-s") {
+            throw CliException("No valid parameter " + arguments[1] + " found for print command");
+        }
+
+        if (arguments[2] == "B") {
             std::cout << debugger->state().readFromDataRegister<uint8_t>(index);
         } else if (arguments[2] == "W") {
-            std::cout << debugger->state().readFromDataRegister<uint16_t>(index);
+                std::cout << debugger->state().readFromDataRegister<uint16_t>(index);
         } else if (arguments[2] == "DW") {
             std::cout << debugger->state().readFromDataRegister<uint32_t>(index);
         } else if (arguments[2] == "QW") {
@@ -51,7 +60,7 @@ void PrintRegisterCommand::execute(CommandWrapper wrappedCommand) {
     } else {
         throw CliException("Unknown register name.");
     }
-    if (arguments.size() == 3 && firstArgument[0] != 'R') {
+    if (arguments.size() == 3 && arguments[1] == "-s" && firstArgument[0] != 'R') {
         //TODO: Warn about value type ignore.
     }
 }
