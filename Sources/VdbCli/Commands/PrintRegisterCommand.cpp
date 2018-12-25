@@ -38,7 +38,7 @@ void PrintRegisterCommand::execute(CommandWrapper wrappedCommand) {
         long index = std::strtol(firstArgument.c_str(), nullptr, 10);
         if (arguments.size() == 1) {
             consoleLogger->out(std::to_string(debugger->state().readFromDataRegister<uint8_t>(index)));
-            std::cout << std::endl;
+            consoleLogger->out("\n");
             return;
         }
 
@@ -60,7 +60,7 @@ void PrintRegisterCommand::execute(CommandWrapper wrappedCommand) {
     } else {
         throw CliException("Unknown register name.");
     }
-    std::cout << std::endl;
+    consoleLogger->out("\n");
     if (arguments.size() == 3 && arguments[1] == "-s" && firstArgument[0] != 'R') {
         //TODO: Warn about value type ignore.
     }
