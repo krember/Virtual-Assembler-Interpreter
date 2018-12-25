@@ -42,8 +42,8 @@ int main() {
     std::cout << std::endl;
     vdbcli.execute("step_in");
     vdbcli.execute("print A2 -s DW");
-//    vdbcli.execute("step_in");
-//    vdbcli.execute("print R0 -s DW");
+    vdbcli.execute("step_in");
+    vdbcli.execute("print R0 -s DW");
 
     return 0;
 }

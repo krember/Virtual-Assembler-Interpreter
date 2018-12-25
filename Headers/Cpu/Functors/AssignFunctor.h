@@ -15,20 +15,23 @@ namespace cpu {
     public:
         AssignFunctor(cpu::CpuState *state);
 
-        virtual void operator()(Instruction & instruction);
+        virtual void operator()(Instruction &instruction);
 
-        void execute(uint8_t dataSize, uint8_t register1, uint32_t literal);
+        void execute(uint8_t dataSize, uint8_t register1, uint32_t literal, bool isData);
 
         template<typename T>
-        void executeOp(uint8_t register1, uint32_t literal);
+        void executeOp(uint8_t register1, uint32_t literal, bool isData);
     };
 }
 
 template<typename T>
-void cpu::AssignFunctor::executeOp(uint8_t register1, uint32_t literal) {
-    cpuState->writeToDataRegisters(register1, T(literal));
+void cpu::AssignFunctor::executeOp(uint8_t register1, uint32_t literal, bool isData) {
+    if (isData) {
+        cpuState->writeToDataRegisters(register1, T(literal));
+    } else {
+        cpuState->writeToAddressRegisters(register1,literal);
+    }
 }
-
 
 
 #endif //VIRTUAL_MACHINE_ASSIGNFUNCTOR_H
