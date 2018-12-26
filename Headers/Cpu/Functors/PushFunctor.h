@@ -33,7 +33,11 @@ void cpu::PushFunctor::executeOp(uint8_t _register) {
     if (vMemory->getMemorySize() - cpuState->sp > vMemory->getStackSize()) {
         throw ExecutionException("Stack overflow");
     }
-    vMemory->write(cpuState->sp, cpuState->readFromDataRegister<T>(_register) + 1);
+    if(_register >= cpuState->generalPurposeRegisters.size()) {
+        vMemory->write(cpuState->sp, cpuState->readFromDataRegister<uint32_t>(_register));
+    } else {
+        vMemory->write(cpuState->sp, cpuState->readFromDataRegister<T>(_register) );
+    }
 }
 
 #endif //VIRTUAL_MACHINE_PUSHFUNCTOR_H

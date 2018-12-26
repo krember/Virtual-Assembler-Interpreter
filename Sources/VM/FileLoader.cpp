@@ -40,6 +40,8 @@ std::pair<uint32_t, SymbolTable> FileLoader::load(std::string fileName) {
     while(address >= dataSectionOffset && address < codeSectionOffset) {
         std::fread(&command, sizeof(uint64_t), 1, file);  // TODO : This returns "DWORD a 4". Is it right? How should we handle it?
         address += 8;
+        inMemoryAddress += 4;
+        codeSectionOffsetInMemory += 4;
     }
 
     while(address >= codeSectionOffset && address < reallocationTableOffset) {

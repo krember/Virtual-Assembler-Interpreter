@@ -18,16 +18,17 @@ namespace vm {
         Memory *vMemory;
         cpu::CPU *vCpu;
         FileLoader *vFileLoader;
-
-    public:
         Debugger *vdb;
 
+    public:
         /* Public interface */
         VirtualMachine();
 
         void initialize();
         void execute(std::string fileName);  // Executes content of the given file (executable)
         void debug(std::string fileName);  // Executes content of the given file (executable)
+
+        Debugger *getVdb();
     };
 }
 

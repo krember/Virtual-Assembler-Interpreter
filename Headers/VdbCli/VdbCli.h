@@ -6,23 +6,20 @@
 #define VIRTUAL_MACHINE_VDBCLI_H
 
 
-#include "Tokenizer.h"
-#include "Parser.h"
-#include "Commands/Command.h"
+#include <VM/VirtualMachine.h>
+#include "VdbCliCore.h"
 
 class VdbCli {
-public:
-    VdbCli(vm::Debugger* _debugger);
-    ~VdbCli();
-    void execute(std::string command);
-
 private:
-    Tokenizer* tokenizer;
-    Parser* parser;
-    vm::Debugger* debugger;
-    std::vector<Command*> commands;
+    vm::VirtualMachine* virtualMachine;
+    VdbCliCore* cliCore;
 
-    void initCommands(std::vector<Command*> &commands);
+public:
+    VdbCli();
+    virtual ~VdbCli();
+
+    void run(std::string filename);
+    void loop();
 };
 
 

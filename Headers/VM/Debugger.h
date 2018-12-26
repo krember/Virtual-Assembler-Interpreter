@@ -11,7 +11,7 @@
 namespace vm {
     class Debugger {
     public:
-        static const uint64_t BREAKPOINT_INSTRUCTION = 0xFF00000000000000;
+        static const uint64_t BREAKPOINT_INSTRUCTION = 0x000000000000007F;
 
         Debugger(cpu::CPU * vCPU, vm::Memory * vMemory);
 

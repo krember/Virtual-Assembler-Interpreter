@@ -31,7 +31,7 @@ namespace lang {
         EXIT,
         LOAD,
         STORE,
-        BREAK = 255,
+        BREAK = 127,
         SIZE_DEFINER = 120
     };
 }

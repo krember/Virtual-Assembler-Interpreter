@@ -29,7 +29,7 @@ namespace cpu {
         bool getZero() const;
         bool getSign() const;
         bool getOverflow() const;
-        uint16_t getFlags(); // TODO: NOTE: Modified shitty
+        uint16_t getFlags();
     
         void setCarry(bool carry );
         void setZero(bool zero);

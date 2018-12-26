@@ -9,7 +9,7 @@
 
 namespace vm {
     const size_t DEFAULT_STACK_SIZE = 512;
-    const size_t DEFAULT_MEMORY_SIZE = 1024;
+    const size_t DEFAULT_MEMORY_SIZE = 2048;
 }
 
 #endif //VIRTUAL_MACHINE_VMCONSTANTS_H

@@ -3,6 +3,7 @@
 //
 
 #include <Exceptions/ExecutionException.h>
+#include <VM/Logging/ConsoleLogger.h>
 #include "VM/Debugger.h"
 
 vm::Debugger::Debugger(cpu::CPU *_vCpu, vm::Memory *_vMemory) : vMemory(_vMemory), vCpu(_vCpu)  {
@@ -11,6 +12,9 @@ vm::Debugger::Debugger(cpu::CPU *_vCpu, vm::Memory *_vMemory) : vMemory(_vMemory
 
 void vm::Debugger::stepIn() {
     vCpu->step();
+    if(vCpu->state().bdr == cpu::HALT_EXIT_CODE) {
+        ConsoleLogger::getInstance()->out("Execution successfully finished.");
+    }
 }
 
 void vm::Debugger::stepOver() {
@@ -21,7 +25,10 @@ void vm::Debugger::stepOver() {
 void vm::Debugger::run() {
     vCpu->run();
     if(vCpu->state().bdr == cpu::BREAK_EXIT_CODE) {
-        removeBreakpoint(vCpu->state().ip - cpu::COMMAND_SIZE);
+        removeBreakpoint(vCpu->state().ip);
+    }
+    if(vCpu->state().bdr == cpu::HALT_EXIT_CODE) {
+        ConsoleLogger::getInstance()->out("Execution successfully finished.");
     }
 }
 

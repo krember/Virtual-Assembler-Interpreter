@@ -64,7 +64,7 @@ template<typename valueType>
 valueType cpu::CpuState::readFromDataRegister(uint8_t address) {
     if(address >= generalPurposeRegisters.size()) {
         address -= generalPurposeRegisters.size();
-        switch(address == 0) {
+        switch(address) {
             case 0:
                 return ip;
             case 1:
@@ -82,13 +82,16 @@ template<typename valueType>
 void cpu::CpuState::writeToDataRegisters(uint8_t address, valueType data) {
     if(address >= generalPurposeRegisters.size()) {
         address -= generalPurposeRegisters.size();
-        switch(address == 0) {
+        switch(address) {
             case 0:
                 ip = data;
+                break;
             case 1:
                 sp = data;
+                break;
             case 2:
                 sf = data;
+                break;
             default:
                 throw ExecutionException("No register exists at address " + std::to_string(address));
         }

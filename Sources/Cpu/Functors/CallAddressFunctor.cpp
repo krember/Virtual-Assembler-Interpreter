@@ -42,5 +42,5 @@ void cpu::CallAddressFunctor::execute(uint8_t dataSize,uint32_t literal) {
 
 void cpu::CallAddressFunctor::executeOp(uint32_t literal) {
     pushFunctor->executeOp<uint32_t>(cpuState->generalPurposeRegisters.size());
-    cpuState->ip = literal;
+    cpuState->ip = literal + 8;
 }

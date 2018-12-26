@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cstring>
-#include <VdbCli/VdbCli.h>
+#include <VdbCli/VdbCliCore.h>
 #include <VM/Logging/Logger.h>
 #include <VM/Logging/ConsoleLogger.h>
 #include <VM/Logging/Logging.h>
+#include <VdbCli/VdbCli.h>
 #include "VM/VirtualMachine.h"
 
 int main() {
@@ -35,18 +36,8 @@ int main() {
 //
 //    functor(1,0,3,0,0,1);
 
-    vm::VirtualMachine *vm = new vm::VirtualMachine();
-    vm -> debug("inputCompiler.exe");
-
-    VdbCli vdbcli(vm->vdb);
-
-    vdbcli.execute("step_in");
-    vdbcli.execute("print R0 -s DW");
-//    std::cout << std::endl;
-    vdbcli.execute("step_in");
-    vdbcli.execute("print A2 -s DW");
-    vdbcli.execute("step_in");
-    vdbcli.execute("print R0 -s DW");
+    VdbCli cli;
+    cli.run("inputCompiler.exe");
 
     return 0;
 }

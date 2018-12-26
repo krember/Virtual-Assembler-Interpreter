@@ -35,7 +35,7 @@
 
 cpu::CPU::CPU(vm::Memory *_memory, uint32_t _memorySize, uint32_t _stackSize) :
         vMemory(_memory),
-        cpuState(0, 0, _memorySize, _stackSize, _memorySize, _stackSize, std::vector<uint8_t>(DATA_REGISTERS_COUNT, 0),
+        cpuState(0, 0, _memorySize, _memorySize, _memorySize, _stackSize, std::vector<uint8_t>(DATA_REGISTERS_COUNT, 0),
                  std::vector<uint32_t>(ADDRESS_REGISTERS_COUNT,0)) {
     initFunctors(instructionFunctors);
 }
@@ -66,8 +66,8 @@ void cpu::CPU::initFunctors(std::vector<cpu::InstructionFunctor *> &_instruction
     _instructionFunctors.push_back(new LoadFunctor(&cpuState, vMemory));
     _instructionFunctors.push_back(new StoreFunctor(&cpuState, vMemory));
 
-    _instructionFunctors.resize(256);
-    _instructionFunctors.at(255) = new BreakFunctor(&cpuState);
+    _instructionFunctors.resize(127);
+    _instructionFunctors.at(126) = new BreakFunctor(&cpuState);
 }
 
 void cpu::CPU::fetch() {

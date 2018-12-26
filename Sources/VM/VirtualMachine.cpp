@@ -28,7 +28,7 @@ void vm::VirtualMachine::execute(std::string fileName) {
 
         vCpu->run();
     } catch (Exception & e) {
-        //TODO: Handle
+        Logging::logToAllLoggers(e.getMessage(), LoggingSeverity::SEVERE);
     }
 }
 
@@ -36,10 +36,11 @@ void vm::VirtualMachine::debug(std::string fileName) {
     try {
         auto result = vFileLoader->load(fileName);
         vCpu->setIp(result.first);
-
-//        vdb->run();
     } catch (Exception &e) {
-        //TODO: Handle (Should not cout)
-        std::cout << e.getMessage() << std::endl;
+        Logging::logToAllLoggers(e.getMessage(), LoggingSeverity::SEVERE);
     }
+}
+
+vm::Debugger *vm::VirtualMachine::getVdb() {
+    return vdb;
 }

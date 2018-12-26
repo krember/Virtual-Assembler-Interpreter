@@ -2,36 +2,34 @@
 // Created by Narek Hovhannisyan and/or Milena Mamyan.
 //
 
-#include <VdbCli/Commands/SetBreakpointCommand.h>
-#include <VdbCli/Commands/RemoveBreakpointCommand.h>
-#include <VdbCli/Commands/ShowStackTraceCommand.h>
-#include <VdbCli/Commands/StepInCommand.h>
-#include <VdbCli/Commands/StepOverCommand.h>
-#include <VdbCli/Commands/ContinueCommand.h>
-#include <VdbCli/Commands/PrintRegisterCommand.h>
-#include "VdbCli/VdbCli.h"
 
-VdbCli::VdbCli(vm::Debugger* _debugger): tokenizer(new Tokenizer()), parser(new Parser()), debugger(_debugger) {
-    initCommands(commands);
-}
+#include <VdbCli/VdbCli.h>
+#include "VM/Logging/Logging.h"
+
+VdbCli::VdbCli() : virtualMachine(new vm::VirtualMachine()),
+             cliCore(new VdbCliCore(virtualMachine->getVdb())) {}
 
 VdbCli::~VdbCli() {
-    delete tokenizer;
-    delete parser;
+    delete virtualMachine;
+    delete cliCore;
 }
 
-void VdbCli::initCommands(std::vector<Command *> &commands) {
-    commands.push_back(new SetBreakpointCommand(debugger));
-    commands.push_back(new RemoveBreakpointCommand(debugger));
-    commands.push_back(new ShowStackTraceCommand(debugger));
-    commands.push_back(new StepInCommand(debugger));
-    commands.push_back(new StepOverCommand(debugger));
-    commands.push_back(new ContinueCommand(debugger));
-    commands.push_back(new PrintRegisterCommand(debugger));
+void VdbCli::run(std::string filename) {
+    virtualMachine->debug(filename);
+    loop();
 }
 
-void VdbCli::execute(std::string command) {
-    std::vector<std::string> tokens = tokenizer->tokenize(command);
-    CommandWrapper parsedCommand = parser->parse(tokens);
-    commands[parsedCommand.getVdbCommand()]->execute(parsedCommand);
+void VdbCli::loop() {
+    std::string input;
+    while(true) {
+        try {
+            std::getline(std::cin, input);
+            if (input == "exit") { // Too lazy to do it in CliCore at night time
+                break;
+            }
+            cliCore->execute(input);
+        } catch(Exception & e) {
+            Logging::logToAllLoggers(e.getMessage(), LoggingSeverity::WARNING);
+        }
+    }
 }
