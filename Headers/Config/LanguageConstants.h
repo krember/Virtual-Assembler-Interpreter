@@ -31,6 +31,8 @@ namespace lang {
         EXIT,
         LOAD,
         STORE,
+        PUSHSF,
+        POPSF,
         BREAK = 127,
         SIZE_DEFINER = 120
     };

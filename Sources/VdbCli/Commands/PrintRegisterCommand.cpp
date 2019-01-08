@@ -65,7 +65,7 @@ void PrintRegisterCommand::execute(CommandWrapper wrappedCommand) {
         throw CliException("Unknown register name.");
     }
     std::cout << std::endl;
-    if (arguments.size() == 3 && arguments[1] == "-s" && firstArgument[0] != 'R') {
+    if (arguments.size() == 3 && arguments[1] == "-s" && prefix[0] != 'R') {
         Logging::logToAllLoggers("Ignored size parameter", LoggingSeverity::WARNING);
     }
 }

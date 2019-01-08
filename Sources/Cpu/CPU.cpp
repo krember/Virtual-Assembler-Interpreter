@@ -30,6 +30,8 @@
 #include <Cpu/Functors/BreakFunctor.h>
 #include <Cpu/Functors/LoadFunctor.h>
 #include <Cpu/Functors/StoreFunctor.h>
+#include <Cpu/Functors/PushSfFunctor.h>
+#include <Cpu/Functors/PopSfFunctor.h>
 
 #include "Cpu/CPU.h"
 
@@ -65,6 +67,8 @@ void cpu::CPU::initFunctors(std::vector<cpu::InstructionFunctor *> &_instruction
     _instructionFunctors.push_back(new ExitFunctor(&cpuState));
     _instructionFunctors.push_back(new LoadFunctor(&cpuState, vMemory));
     _instructionFunctors.push_back(new StoreFunctor(&cpuState, vMemory));
+    _instructionFunctors.push_back(new PushSfFunctor(&cpuState, _instructionFunctors.at(lang::Operation::PUSH)));
+    _instructionFunctors.push_back(new PopSfFunctor(&cpuState, _instructionFunctors.at(lang::Operation::POP)));
 
     _instructionFunctors.resize(127);
     _instructionFunctors.at(126) = new BreakFunctor(&cpuState);
@@ -106,12 +110,11 @@ void cpu::CPU::run() {
 
 void cpu::CPU::step() {
     cpuState.bdr = 0;
-    Instruction* instruction = new Instruction();
+    Instruction instruction;
     fetch();
-    decode(instruction);
+    decode(&instruction);
     incrementIP();
-    execute(instruction);
-    delete instruction;
+    execute(&instruction);
 }
 
 void cpu::CPU::setIp(uint32_t _ip) {

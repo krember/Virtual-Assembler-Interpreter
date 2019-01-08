@@ -23,6 +23,7 @@ void VdbCli::loop() {
     std::string input;
     while(true) {
         try {
+            std::cout << ">> ";
             std::getline(std::cin, input);
             if (input == "exit") { // Too lazy to do it in CliCore at night time
                 break;

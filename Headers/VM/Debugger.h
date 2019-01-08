@@ -7,6 +7,7 @@
 
 #include <Cpu/CPU.h>
 #include <map>
+#include <ObjectFile/SymbolTable.h>
 
 namespace vm {
     class Debugger {
@@ -23,11 +24,18 @@ namespace vm {
 
         uint32_t nextCommand();
         cpu::CpuState state();
+
+        std::vector<std::string> getStackTrace();
+        const SymbolTable &getSymbolTable() const;
+        void setSymbolTable(const SymbolTable &symbolTable);
     private:
         vm::Memory * vMemory;
-        cpu::CPU * vCpu;
+        cpu::CPU *vCpu;
+        SymbolTable symbolTable;
 
         std::map<uint32_t, uint64_t> stashedInstructions;
+
+        void getStackTrace(std::vector<std::string> &functions, uint32_t sf, cpu::Instruction*);
     };
 }
 

@@ -12,6 +12,9 @@ vm::Debugger::Debugger(cpu::CPU *_vCpu, vm::Memory *_vMemory) : vMemory(_vMemory
 
 void vm::Debugger::stepIn() {
     vCpu->step();
+    if(vCpu->state().bdr == cpu::BREAK_EXIT_CODE) {
+        removeBreakpoint(vCpu->state().ip);
+    }
     if(vCpu->state().bdr == cpu::HALT_EXIT_CODE) {
         ConsoleLogger::getInstance()->out("Execution successfully finished.");
     }
@@ -51,4 +54,42 @@ void vm::Debugger::removeBreakpoint(uint32_t address) {
     }
     vMemory->write(address, stashedInstructions.at(address));
     stashedInstructions.erase(address);
+}
+
+const SymbolTable &vm::Debugger::getSymbolTable() const {
+    return symbolTable;
+}
+
+void vm::Debugger::setSymbolTable(const SymbolTable &symbolTable) {
+    Debugger::symbolTable = symbolTable;
+}
+
+void vm::Debugger::getStackTrace(std::vector<std::string> &functions, uint32_t sf, cpu::Instruction* instruction) {
+    if(sf == vCpu->state().memorySize) {
+        functions.push_back("Main");
+        return;
+    }
+
+    getStackTrace(functions, vMemory->read<uint32_t>(sf), instruction);
+
+    uint32_t ip = vMemory->read<uint32_t>(sf+4) - cpu::COMMAND_SIZE;
+    uint64_t command = vMemory->read<uint64_t>(ip);
+    instruction->init(command);
+    if(instruction->getOpCode() - 1 == lang::CALL) {
+        for (auto const& x : symbolTable.getTable())
+        {
+            if(x.second == instruction->getLiteral()) {
+                functions.push_back(x.first);
+                break;
+            }
+        }
+    }
+}
+
+std::vector<std::string> vm::Debugger::getStackTrace() {
+    cpu::Instruction* instruction = new cpu::Instruction();
+    std::vector<std::string> functions;
+
+    getStackTrace(functions, vCpu->state().sf, instruction);
+    return functions;
 }

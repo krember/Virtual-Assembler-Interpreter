@@ -32,6 +32,9 @@ void VdbCliCore::initCommands(std::vector<Command *> &commands) {
 
 void VdbCliCore::execute(std::string command) {
     std::vector<std::string> tokens = tokenizer->tokenize(command);
+    if(tokens.empty()) {
+        return;
+    }
     CommandWrapper parsedCommand = parser->parse(tokens);
     commands[parsedCommand.getVdbCommand()]->execute(parsedCommand);
 }

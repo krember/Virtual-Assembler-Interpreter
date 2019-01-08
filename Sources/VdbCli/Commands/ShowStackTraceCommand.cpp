@@ -4,6 +4,7 @@
 
 #include <VdbCli/Commands/ShowStackTraceCommand.h>
 #include <Exceptions/CliException.h>
+#include <VM/Logging/ConsoleLogger.h>
 
 #include "VdbCli/Commands/ShowStackTraceCommand.h"
 
@@ -16,5 +17,10 @@ void ShowStackTraceCommand::execute(CommandWrapper wrappedCommand) {
 
     if (!wrappedCommand.getArguments().empty()) {
         throw CliException("0", wrappedCommand.getArguments().size());
+    }
+
+    std::vector<std::string> st = debugger->getStackTrace();
+    for(std::string & func : st) {
+        ConsoleLogger::getInstance()->out(func + "\n");
     }
 }

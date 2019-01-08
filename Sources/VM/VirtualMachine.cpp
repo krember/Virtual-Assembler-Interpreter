@@ -25,6 +25,7 @@ void vm::VirtualMachine::execute(std::string fileName) {
     try {
         auto result = vFileLoader->load(fileName);
         vCpu->setIp(result.first);
+        vdb->setSymbolTable(result.second);
 
         vCpu->run();
     } catch (Exception & e) {
@@ -36,6 +37,7 @@ void vm::VirtualMachine::debug(std::string fileName) {
     try {
         auto result = vFileLoader->load(fileName);
         vCpu->setIp(result.first);
+        vdb->setSymbolTable(result.second);
     } catch (Exception &e) {
         Logging::logToAllLoggers(e.getMessage(), LoggingSeverity::SEVERE);
     }
